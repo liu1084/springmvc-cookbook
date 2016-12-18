@@ -1,0 +1,16 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="cloudstreetmarket-api:war exploded">
+    <output-path>$PROJECT_DIR$/cloudstreetmarket-api/target/cloudstreetmarket-api-0.0.1-SNAPSHOT</output-path>
+    <root id="root">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="cloudstreetmarket-api" />
+        </element>
+      </element>
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/cloudstreetmarket-api/target/cloudstreetmarket-api-0.0.1-SNAPSHOT/META-INF/MANIFEST.MF" />
+      </element>
+      <element id="javaee-facet-resources" facet="cloudstreetmarket-api/web/Web" />
+    </root>
+  </artifact>
+</component>
