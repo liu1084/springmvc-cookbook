@@ -1,7 +1,7 @@
 <component name="ArtifactManager">
   <artifact type="war" name="cloudstreetmarket-api:war">
     <output-path>$PROJECT_DIR$/cloudstreetmarket-api/target</output-path>
-    <root id="archive" name="cloudstreetmarket-api-0.0.1-SNAPSHOT.war">
+    <root id="archive" name="api.war">
       <element id="artifact" artifact-name="cloudstreetmarket-api:war exploded" />
     </root>
   </artifact>
