@@ -5,3 +5,5 @@ RemoteSystemsTempFiles
 *.iml
 .settings
 .project
+Servers
+classes
