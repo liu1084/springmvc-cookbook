@@ -19,13 +19,19 @@ import java.util.StringJoiner;
  * This class is ...
  */
 @Controller
-@RequestMapping("/info")
+@RequestMapping("/")
 public class InfoTagController {
 	@Autowired
 	private WebApplicationContext webAppContext;
 
 	private static final LocalDateTime localDateTime = LocalDateTime.now();
 	private static final DateTimeFormatter dateTimeFormat = DateTimeFormatter.ofPattern("EEE, d MMM yyyy HH:mm:ss a");
+
+	@RequestMapping(value = {"", "/"}, method = RequestMethod.GET)
+	@ResponseBody
+	public String test(){
+		return "test";
+	}
 
 	@RequestMapping(value = "/helloHandler", method = RequestMethod.GET)
 	public String helloHandler(ModelMap modelAndView) {
@@ -36,7 +42,7 @@ public class InfoTagController {
 	@RequestMapping(value = "/message/{name:.+}", method = RequestMethod.GET)
 	public ModelAndView messageHandler(@PathVariable String name) {
 		ModelAndView model = new ModelAndView();
-		model.setViewName("hello");
+		model.setViewName("index");
 		return model;
 	}
 
