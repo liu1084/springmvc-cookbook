@@ -11,6 +11,20 @@
     <name>CloudStreetMarket Webapp</name>
     <description>CloudStreetMarket Webapp</description>
 
+    <repositories>
+        <repository>
+            <id>central</id>
+            <url>http://45.79.180.85:8081/nexus/content/groups/public/</url>
+        </repository>
+
+        <repository>
+            <id>mirrors</id>
+            <url>http://central.maven.org/maven2/</url>
+        </repository>
+    </repositories>
+
+
+
     <build>
         <finalName>portal</finalName>
         <plugins>
@@ -33,7 +47,6 @@
     </build>
 
     <dependencies>
-
         <!-- Projects dependencies -->
         <dependency>
             <groupId>edu.zipcloud</groupId>
