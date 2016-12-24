@@ -20,7 +20,7 @@ import java.util.Map;
 public class UserController {
 	@RequestMapping(value = {"", "/"}, method = RequestMethod.GET)
 	@ResponseBody
-	public String getInfo(){
+	public String getInfo() {
 		return "index";
 	}
 
@@ -32,22 +32,8 @@ public class UserController {
 	public String getFoosBySimplePath() {
 		return "Get some Foos";
 	}
-	@RequestMapping(
-			value = "/ex/foos",
-			headers = "Accept=application/json",
-			method = RequestMethod.GET)
-	@ResponseBody
-	public String getHeaders() {
-		Gson gson = new Gson();
-		Map<String, String> person = new HashMap<>();
-		person.put("name", "liujun");
-		person.put("age", "20");
 
-		List<Map<String, String>> persons = new ArrayList<>();
-		persons.add(person);
 
-		return gson.toJson(persons);
-	}
 	@RequestMapping(
 			value = "/ex/foos",
 			method = RequestMethod.GET,
