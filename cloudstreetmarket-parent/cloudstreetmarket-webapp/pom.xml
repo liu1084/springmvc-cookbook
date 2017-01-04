@@ -11,19 +11,6 @@
     <name>CloudStreetMarket Webapp</name>
     <description>CloudStreetMarket Webapp</description>
 
-    <repositories>
-        <repository>
-            <id>central</id>
-            <url>http://45.79.180.85:8081/nexus/content/groups/public/</url>
-        </repository>
-
-        <repository>
-            <id>mirrors</id>
-            <url>http://central.maven.org/maven2/</url>
-        </repository>
-    </repositories>
-
-
 
     <build>
         <finalName>portal</finalName>
@@ -48,10 +35,10 @@
 
     <dependencies>
         <!-- Projects dependencies -->
-        <dependency>
-            <groupId>edu.zipcloud</groupId>
-            <artifactId>zipcloud-core</artifactId>
-        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>edu.zipcloud</groupId>-->
+            <!--<artifactId>zipcloud-core</artifactId>-->
+        <!--</dependency>-->
         <dependency>
             <groupId>javax.servlet.jsp</groupId>
             <artifactId>jsp-api</artifactId>
@@ -88,6 +75,22 @@
             <artifactId>spring-webmvc</artifactId>
         </dependency>
 
+        <!-- hibernate -->
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-tx</artifactId>
+        </dependency>
+
+        <!-- mysql-->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+        </dependency>
+
         <!-- Tests -->
         <dependency>
             <groupId>junit</groupId>
@@ -117,5 +120,6 @@
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
         </dependency>
+
     </dependencies>
 </project>

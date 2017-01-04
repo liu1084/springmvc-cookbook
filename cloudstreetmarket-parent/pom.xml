@@ -8,6 +8,23 @@
     <name>CloudStreetMarket Parent</name>
     <description>CloudStreetMarket Parent</description>
 
+    <repositories>
+        <!--<repository>-->
+            <!--<id>central</id>-->
+            <!--<url>http://10.4.45.12:8081/nexus/content/groups/public/</url>-->
+        <!--</repository>-->
+        <repository>
+            <id>central</id>
+            <url>http://central.maven.org/maven2/</url>
+        </repository>
+
+
+        <!--<repository>-->
+            <!--<id>mirrors</id>-->
+            <!--<url>http://45.79.180.85:8081/nexus/content/groups/public/</url>-->
+        <!--</repository>-->
+    </repositories>
+
     <properties>
         <csm.version>0.0.1-SNAPSHOT</csm.version>
         <zipcloud.version>0.0.1-SNAPSHOT</zipcloud.version>
@@ -23,17 +40,19 @@
         <junit.version>4.4</junit.version>
         <commons-lang3.version>3.0</commons-lang3.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <JDK_HOME>D:\Java\jdk1.8.0_101</JDK_HOME>
+        <hibernate.version>5.2.5.Final</hibernate.version>
+        <mysql.version>6.0.5</mysql.version>
+        <JDK_HOME>D:\Java\jdk1.8.0_92</JDK_HOME>
     </properties>
 
     <dependencyManagement>
         <dependencies>
             <!-- ZipCloud dependencies -->
-            <dependency>
-                <groupId>edu.zipcloud</groupId>
-                <artifactId>zipcloud-core</artifactId>
-                <version>${zipcloud.version}</version>
-            </dependency>
+            <!--<dependency>-->
+                <!--<groupId>edu.zipcloud</groupId>-->
+                <!--<artifactId>zipcloud-core</artifactId>-->
+                <!--<version>${zipcloud.version}</version>-->
+            <!--</dependency>-->
 
             <!-- Spring dependencies -->
             <!-- Spring core container -->
@@ -158,6 +177,19 @@
                 <artifactId>javax.el-api</artifactId>
                 <version>${java.uel.version}</version>
                 <scope>provided</scope>
+            </dependency>
+
+            <!-- hibernate -->
+            <dependency>
+                <groupId>org.hibernate</groupId>
+                <artifactId>hibernate-core</artifactId>
+                <version>${hibernate.version}</version>
+            </dependency>
+            <!-- mysql-->
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>${mysql.version}</version>
             </dependency>
 
             <!-- Logging dependencies -->

@@ -35,10 +35,10 @@
 
     <dependencies>
         <!-- Projects dependencies -->
-        <dependency>
-            <groupId>edu.zipcloud</groupId>
-            <artifactId>zipcloud-core</artifactId>
-        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>edu.zipcloud</groupId>-->
+            <!--<artifactId>zipcloud-core</artifactId>-->
+        <!--</dependency>-->
 
         <dependency>
             <groupId>javax.servlet.jsp</groupId>
