@@ -12,7 +12,7 @@
        http://www.springframework.org/schema/mvc/spring-mvc.xsd
        http://www.springframework.org/schema/util
        http://www.springframework.org/schema/util/spring-util.xsd">
-    <context:component-scan base-package="edu.zipcloud.cloudstreetmarket.portal"/>
+    <context:component-scan base-package="com.jim"/>
     <mvc:annotation-driven />
     <mvc:resources mapping="/static/**" location="/static/"/>
     <util:properties id="properties" location="classpath:webapp.properties"/>

@@ -3,12 +3,12 @@ package com.jim.entity;
 import javax.persistence.*;
 
 /**
- * Created by jim on 2017/1/4.
+ * Created by jim on 2017/1/5.
  * This class is ...
  */
 @Entity
-@Table(name = "books", schema = "", catalog = "ebook")
-public class EbookBooksEntity {
+@Table(name = "books", schema = "ebook", catalog = "")
+public class BooksEntity {
 	private long id;
 	private String name;
 	private String description;
@@ -18,13 +18,13 @@ public class EbookBooksEntity {
 	private String year;
 	private int pages;
 	private String language;
-	private float size;
+	private double size;
 	private String format;
 	private long category;
 	private byte rating;
 
 	@Id
-	@Column(name = "id", nullable = false, insertable = true, updatable = true)
+	@Column(name = "id", nullable = false)
 	public long getId() {
 		return id;
 	}
@@ -34,7 +34,7 @@ public class EbookBooksEntity {
 	}
 
 	@Basic
-	@Column(name = "name", nullable = false, insertable = true, updatable = true, length = 100)
+	@Column(name = "name", nullable = false, length = 100)
 	public String getName() {
 		return name;
 	}
@@ -44,7 +44,7 @@ public class EbookBooksEntity {
 	}
 
 	@Basic
-	@Column(name = "description", nullable = false, insertable = true, updatable = true, length = 65535)
+	@Column(name = "description", nullable = false, length = -1)
 	public String getDescription() {
 		return description;
 	}
@@ -54,7 +54,7 @@ public class EbookBooksEntity {
 	}
 
 	@Basic
-	@Column(name = "cover", nullable = false, insertable = true, updatable = true, length = 100)
+	@Column(name = "cover", nullable = false, length = 100)
 	public String getCover() {
 		return cover;
 	}
@@ -64,7 +64,7 @@ public class EbookBooksEntity {
 	}
 
 	@Basic
-	@Column(name = "author", nullable = false, insertable = true, updatable = true, length = 100)
+	@Column(name = "author", nullable = false, length = 100)
 	public String getAuthor() {
 		return author;
 	}
@@ -74,7 +74,7 @@ public class EbookBooksEntity {
 	}
 
 	@Basic
-	@Column(name = "isbn", nullable = false, insertable = true, updatable = true, length = 50)
+	@Column(name = "isbn", nullable = false, length = 50)
 	public String getIsbn() {
 		return isbn;
 	}
@@ -84,7 +84,7 @@ public class EbookBooksEntity {
 	}
 
 	@Basic
-	@Column(name = "year", nullable = false, insertable = true, updatable = true, length = 10)
+	@Column(name = "year", nullable = false, length = 10)
 	public String getYear() {
 		return year;
 	}
@@ -94,7 +94,7 @@ public class EbookBooksEntity {
 	}
 
 	@Basic
-	@Column(name = "pages", nullable = false, insertable = true, updatable = true)
+	@Column(name = "pages", nullable = false)
 	public int getPages() {
 		return pages;
 	}
@@ -104,7 +104,7 @@ public class EbookBooksEntity {
 	}
 
 	@Basic
-	@Column(name = "language", nullable = false, insertable = true, updatable = true, length = 50)
+	@Column(name = "language", nullable = false, length = 50)
 	public String getLanguage() {
 		return language;
 	}
@@ -114,17 +114,17 @@ public class EbookBooksEntity {
 	}
 
 	@Basic
-	@Column(name = "size", nullable = false, insertable = true, updatable = true, precision = 0)
-	public float getSize() {
+	@Column(name = "size", nullable = false, precision = 0)
+	public double getSize() {
 		return size;
 	}
 
-	public void setSize(float size) {
+	public void setSize(double size) {
 		this.size = size;
 	}
 
 	@Basic
-	@Column(name = "format", nullable = false, insertable = true, updatable = true, length = 50)
+	@Column(name = "format", nullable = false, length = 50)
 	public String getFormat() {
 		return format;
 	}
@@ -134,7 +134,7 @@ public class EbookBooksEntity {
 	}
 
 	@Basic
-	@Column(name = "category", nullable = false, insertable = true, updatable = true)
+	@Column(name = "category", nullable = false)
 	public long getCategory() {
 		return category;
 	}
@@ -144,7 +144,7 @@ public class EbookBooksEntity {
 	}
 
 	@Basic
-	@Column(name = "rating", nullable = false, insertable = true, updatable = true)
+	@Column(name = "rating", nullable = false)
 	public byte getRating() {
 		return rating;
 	}
@@ -158,11 +158,11 @@ public class EbookBooksEntity {
 		if (this == o) return true;
 		if (o == null || getClass() != o.getClass()) return false;
 
-		EbookBooksEntity that = (EbookBooksEntity) o;
+		BooksEntity that = (BooksEntity) o;
 
 		if (id != that.id) return false;
 		if (pages != that.pages) return false;
-		if (Float.compare(that.size, size) != 0) return false;
+		if (Double.compare(that.size, size) != 0) return false;
 		if (category != that.category) return false;
 		if (rating != that.rating) return false;
 		if (name != null ? !name.equals(that.name) : that.name != null) return false;
@@ -179,7 +179,9 @@ public class EbookBooksEntity {
 
 	@Override
 	public int hashCode() {
-		int result = (int) (id ^ (id >>> 32));
+		int result;
+		long temp;
+		result = (int) (id ^ (id >>> 32));
 		result = 31 * result + (name != null ? name.hashCode() : 0);
 		result = 31 * result + (description != null ? description.hashCode() : 0);
 		result = 31 * result + (cover != null ? cover.hashCode() : 0);
@@ -188,7 +190,8 @@ public class EbookBooksEntity {
 		result = 31 * result + (year != null ? year.hashCode() : 0);
 		result = 31 * result + pages;
 		result = 31 * result + (language != null ? language.hashCode() : 0);
-		result = 31 * result + (size != +0.0f ? Float.floatToIntBits(size) : 0);
+		temp = Double.doubleToLongBits(size);
+		result = 31 * result + (int) (temp ^ (temp >>> 32));
 		result = 31 * result + (format != null ? format.hashCode() : 0);
 		result = 31 * result + (int) (category ^ (category >>> 32));
 		result = 31 * result + (int) rating;

@@ -4,12 +4,12 @@ import javax.persistence.*;
 import java.sql.Timestamp;
 
 /**
- * Created by jim on 2017/1/4.
+ * Created by jim on 2017/1/5.
  * This class is ...
  */
 @Entity
-@Table(name = "comments", schema = "", catalog = "ebook")
-public class EbookCommentsEntity {
+@Table(name = "comments", schema = "ebook", catalog = "")
+public class CommentsEntity {
 	private long id;
 	private long parentId;
 	private String title;
@@ -24,7 +24,7 @@ public class EbookCommentsEntity {
 	private Timestamp updateAt;
 
 	@Id
-	@Column(name = "id", nullable = false, insertable = true, updatable = true)
+	@Column(name = "id", nullable = false)
 	public long getId() {
 		return id;
 	}
@@ -34,7 +34,7 @@ public class EbookCommentsEntity {
 	}
 
 	@Basic
-	@Column(name = "parent_id", nullable = false, insertable = true, updatable = true)
+	@Column(name = "parent_id", nullable = false)
 	public long getParentId() {
 		return parentId;
 	}
@@ -44,7 +44,7 @@ public class EbookCommentsEntity {
 	}
 
 	@Basic
-	@Column(name = "title", nullable = false, insertable = true, updatable = true, length = 100)
+	@Column(name = "title", nullable = false, length = 100)
 	public String getTitle() {
 		return title;
 	}
@@ -54,7 +54,7 @@ public class EbookCommentsEntity {
 	}
 
 	@Basic
-	@Column(name = "content", nullable = false, insertable = true, updatable = true, length = 65535)
+	@Column(name = "content", nullable = false, length = -1)
 	public String getContent() {
 		return content;
 	}
@@ -64,7 +64,7 @@ public class EbookCommentsEntity {
 	}
 
 	@Basic
-	@Column(name = "user_id", nullable = false, insertable = true, updatable = true)
+	@Column(name = "user_id", nullable = false)
 	public long getUserId() {
 		return userId;
 	}
@@ -74,7 +74,7 @@ public class EbookCommentsEntity {
 	}
 
 	@Basic
-	@Column(name = "status", nullable = false, insertable = true, updatable = true, length = 10)
+	@Column(name = "status", nullable = false, length = 10)
 	public String getStatus() {
 		return status;
 	}
@@ -84,7 +84,7 @@ public class EbookCommentsEntity {
 	}
 
 	@Basic
-	@Column(name = "rating", nullable = false, insertable = true, updatable = true)
+	@Column(name = "rating", nullable = false)
 	public byte getRating() {
 		return rating;
 	}
@@ -94,7 +94,7 @@ public class EbookCommentsEntity {
 	}
 
 	@Basic
-	@Column(name = "book_id", nullable = false, insertable = true, updatable = true)
+	@Column(name = "book_id", nullable = false)
 	public long getBookId() {
 		return bookId;
 	}
@@ -104,7 +104,7 @@ public class EbookCommentsEntity {
 	}
 
 	@Basic
-	@Column(name = "ip_address", nullable = false, insertable = true, updatable = true, length = 50)
+	@Column(name = "ip_address", nullable = false, length = 50)
 	public String getIpAddress() {
 		return ipAddress;
 	}
@@ -114,7 +114,7 @@ public class EbookCommentsEntity {
 	}
 
 	@Basic
-	@Column(name = "email", nullable = false, insertable = true, updatable = true, length = 50)
+	@Column(name = "email", nullable = false, length = 50)
 	public String getEmail() {
 		return email;
 	}
@@ -124,7 +124,7 @@ public class EbookCommentsEntity {
 	}
 
 	@Basic
-	@Column(name = "create_at", nullable = false, insertable = true, updatable = true)
+	@Column(name = "create_at", nullable = false)
 	public Timestamp getCreateAt() {
 		return createAt;
 	}
@@ -134,7 +134,7 @@ public class EbookCommentsEntity {
 	}
 
 	@Basic
-	@Column(name = "update_at", nullable = false, insertable = true, updatable = true)
+	@Column(name = "update_at", nullable = false)
 	public Timestamp getUpdateAt() {
 		return updateAt;
 	}
@@ -148,7 +148,7 @@ public class EbookCommentsEntity {
 		if (this == o) return true;
 		if (o == null || getClass() != o.getClass()) return false;
 
-		EbookCommentsEntity that = (EbookCommentsEntity) o;
+		CommentsEntity that = (CommentsEntity) o;
 
 		if (id != that.id) return false;
 		if (parentId != that.parentId) return false;

@@ -3,12 +3,16 @@
         "-//Hibernate/Hibernate Configuration DTD//EN"
         "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
 <hibernate-configuration>
+
     <session-factory>
-        <property name="connection.url">jdbc:mysql://10.4.45.241:3306/ebook</property>
+        <property name="connection.url">jdbc:mysql://localhost:3306/ebook</property>
         <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
-        <mapping class="com.jim.entity.EbookBooksEntity"/>
-        <mapping class="com.jim.entity.EbookCategoriesEntity"/>
-        <mapping class="com.jim.entity.EbookCommentsEntity"/>
+        <property name="connection.username">root</property>
+        <property name="connection.password">livedoor2008</property>
+        <property name="dialect">org.hibernate.dialect.MySQL5Dialect</property>
+        <mapping class="com.jim.entity.BooksEntity"/>
+        <mapping class="com.jim.entity.CategoriesEntity"/>
+        <mapping class="com.jim.entity.CommentsEntity"/>
         <!-- DB schema will be updated if needed -->
         <!-- <property name="hbm2ddl.auto">update</property> -->
     </session-factory>

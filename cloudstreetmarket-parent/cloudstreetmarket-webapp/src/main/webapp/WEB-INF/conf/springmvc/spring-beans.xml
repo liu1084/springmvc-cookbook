@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/util
+       http://www.springframework.org/schema/util/spring-util.xsd">
 
     <bean class="java.lang.String" id="webAppVersion">
         <constructor-arg value="1.0"/>
@@ -14,17 +18,66 @@
     </bean>
 
     <bean id="httpClientFactory" class="org.springframework.http.client.SimpleClientHttpRequestFactory">
-        <property name="connectTimeout" value="${webapp.rest.connectTimeout}"/>
-        <property name="readTimeout" value="${webapp.rest.readTimeout}"/>
+        <property name="connectTimeout" value="3000"/>
+        <property name="readTimeout" value="30000"/>
     </bean>
 
     <bean id="restTemplate" class="org.springframework.web.client.RestTemplate">
         <constructor-arg ref="httpClientFactory"/>
     </bean>
 
-    <bean id="filterMultipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
-        <property name="defaultEncoding" value="${webapp.encoding}"/>
-        <property name="maxUploadSize" value="${webapp.maxUploadSize}"/>
-        <property name="maxInMemorySize" value="${webapp.maxInMemorySize}"/>
+    <!--<bean id="filterMultipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">-->
+        <!--<property name="defaultEncoding" value="${webapp.encoding}"/>-->
+        <!--<property name="maxUploadSize" value="${webapp.maxUploadSize}"/>-->
+        <!--<property name="maxInMemorySize" value="${webapp.maxInMemorySize}"/>-->
+    <!--</bean>-->
+    <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer" id="propertyPlaceholderConfigurer">
+        <property name="location" value="classpath:webapp.properties"/>
+        <property name="systemPropertiesMode" value="2"/>
     </bean>
+
+    <bean id="dataSource" class="org.apache.tomcat.dbcp.dbcp2.BasicDataSource"
+          destroy-method="close" >
+        <property name="driverClassName" value="${webapp.datasource.driverClass}"/>
+        <property name="url" value="${webapp.datasource.jdbcUrl}"/>
+        <property name="username" value="${webapp.datasource.user}"/>
+        <property name="password" value="${webapp.datasource.password}"/>
+        <property name="initialSize" value="${webapp.datasource.initialPoolSize}"/>
+        <property name="maxIdle" value="${webapp.datasource.maxIdleTime}"/>
+        <property name="maxWaitMillis" value="${webapp.datasource.maxWait}"/>
+        <property name="validationQuery" value="select 1" />
+        <property name="testWhileIdle" value="true" />
+        <property name="testOnBorrow" value="true" />
+        <!-- #运行判断连接超时任务的时间间隔，单位为毫秒，默认为-1，即不执行任务。 -->
+        <property name="timeBetweenEvictionRunsMillis" value="5000" />
+        <!-- #连接的超时时间，默认为半小时。 -->
+        <property name="minEvictableIdleTimeMillis" value="8000" />
+    </bean>
+
+    <bean id="sessionFactory"
+          class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+        <property name="dataSource" ref="dataSource" />
+        <property name="packagesToScan">
+            <list>
+                <value>com.jim.entity</value>
+            </list>
+        </property>
+        <property name="mappingDirectoryLocations">
+            <list>
+                <value>/WEB-INF/conf/**/hbm</value>
+            </list>
+        </property>
+        <property name="hibernateProperties">
+            <props>
+                <prop key="hibernate.dialect">${webapp.hibernate.dialect}</prop>
+                <prop key="hibernate.show_sql">false</prop>
+                <prop key="hibernate.format_sql">true</prop>
+                <prop key="hibernate.connection.url">jdbc:mysql://localhost:3306/ebook</prop>
+                <prop key="hibernate.connection.driver_class">com.mysql.jdbc.Driver</prop>
+                <prop key="connection.username>">${webapp.datasource.user}</prop>
+                <prop key="connection.password">${webapp.datasource.password}</prop>
+            </props>
+        </property>
+    </bean>
+
 </beans>

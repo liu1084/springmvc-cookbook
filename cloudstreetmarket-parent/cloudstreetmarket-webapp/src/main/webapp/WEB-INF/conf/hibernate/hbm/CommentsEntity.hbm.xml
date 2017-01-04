@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.jim.entity.CommentsEntity" table="comments" schema="ebook">
+        <id name="id">
+            <column name="id" sql-type="bigint(30) unsigned"/>
+        </id>
+        <property name="parentId">
+            <column name="parent_id" sql-type="bigint(30) unsigned"/>
+        </property>
+        <property name="title">
+            <column name="title" sql-type="varchar(100)" length="100"/>
+        </property>
+        <property name="content">
+            <column name="content" sql-type="text"/>
+        </property>
+        <property name="userId">
+            <column name="user_id" sql-type="bigint(30) unsigned"/>
+        </property>
+        <property name="status">
+            <column name="status" sql-type="varchar(10)" length="10"/>
+        </property>
+        <property name="rating">
+            <column name="rating" sql-type="tinyint(1)"/>
+        </property>
+        <property name="bookId">
+            <column name="book_id" sql-type="bigint(30) unsigned"/>
+        </property>
+        <property name="ipAddress">
+            <column name="ip_address" sql-type="varchar(50)" length="50"/>
+        </property>
+        <property name="email">
+            <column name="email" sql-type="varchar(50)" length="50"/>
+        </property>
+        <property name="createAt">
+            <column name="create_at" sql-type="datetime"/>
+        </property>
+        <property name="updateAt">
+            <column name="update_at" sql-type="datetime"/>
+        </property>
+    </class>
+</hibernate-mapping>
