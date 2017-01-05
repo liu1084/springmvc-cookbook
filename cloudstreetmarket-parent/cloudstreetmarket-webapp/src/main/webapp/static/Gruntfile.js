@@ -138,7 +138,7 @@ module.exports = function (grunt) {
         },
 		uglify : {
             options : {
-                banner : '/* All right reserved by Neusoft Co. Ltd. <%= grunt.template.today("yyyy-mm-dd HH:mm:ss") %> */\n',
+                banner : '/* All right reserved by JIM Co. Ltd. <%= grunt.template.today("yyyy-mm-dd HH:mm:ss") %> */\n',
 				mangle: {
 					except: ['jQuery']
 				},
