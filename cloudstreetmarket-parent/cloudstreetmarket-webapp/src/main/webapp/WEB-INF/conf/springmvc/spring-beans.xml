@@ -26,18 +26,18 @@
         <constructor-arg ref="httpClientFactory"/>
     </bean>
 
-    <!--<bean id="filterMultipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">-->
-        <!--<property name="defaultEncoding" value="${webapp.encoding}"/>-->
-        <!--<property name="maxUploadSize" value="${webapp.maxUploadSize}"/>-->
-        <!--<property name="maxInMemorySize" value="${webapp.maxInMemorySize}"/>-->
-    <!--</bean>-->
+    <bean id="filterMultipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        <property name="defaultEncoding" value="${webapp.encoding}"/>
+        <property name="maxUploadSize" value="10240000"/>
+        <property name="maxInMemorySize" value="4096"/>
+    </bean>
+
     <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer" id="propertyPlaceholderConfigurer">
         <property name="location" value="classpath:webapp.properties"/>
         <property name="systemPropertiesMode" value="2"/>
     </bean>
 
-    <bean id="dataSource" class="org.apache.tomcat.dbcp.dbcp2.BasicDataSource"
-          destroy-method="close" >
+    <bean id="dataSource" class="org.apache.tomcat.dbcp.dbcp2.BasicDataSource" destroy-method="close" >
         <property name="driverClassName" value="${webapp.datasource.driverClass}"/>
         <property name="url" value="${webapp.datasource.jdbcUrl}"/>
         <property name="username" value="${webapp.datasource.user}"/>
@@ -54,8 +54,7 @@
         <property name="minEvictableIdleTimeMillis" value="8000" />
     </bean>
 
-    <bean id="sessionFactory"
-          class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+    <bean id="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
         <property name="dataSource" ref="dataSource" />
         <property name="packagesToScan">
             <list>
