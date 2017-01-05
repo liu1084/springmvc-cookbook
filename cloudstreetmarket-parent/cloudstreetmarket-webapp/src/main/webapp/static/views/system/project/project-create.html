@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>UTF v2.0</title>
+	<meta charset="UTF-8"/>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta name="viewport"
+		  content="width=device-width, initial-scale=1, maximum-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=0">
+	<title>index</title>
+	<link rel="shortcut icon" href="../../../assets/img/favicon.ico"/>
+	<link rel="stylesheet" href="../../../vendor/normalize-css/normalize.css"/>
+	<link rel="stylesheet" href="../../../vendor/pace/themes/pink/pace-theme-minimal.css"/>
+	<link rel="stylesheet" href="../../../vendor/iCheck/skins/all.css"/>
+	<link rel="stylesheet" href="../../../assets/neusoft/bootstrap/css/bootstrap.css"/>
+	<link href="../../../assets/css/icon/fonts.css" rel="stylesheet"/>
+	<link href="../../../dist/css/common/common.css" rel="stylesheet"/>
+	<link href="../../../dist/css/system/project/project-create.css" rel="stylesheet"/>
+</head>
+<body class="neu-container">
+<section class="neu-header">
+	<div class="logo">
+		<a href="/">
+			<img src="../../../assets/img/acap-logo.png" alt="UTF v5.0"/>
+		</a>
+	</div>
+
+	<div class="neu-top-menu">
+		<ul>
+			<li class="top-menu-item">
+				<a class="menu-dropdown">
+					<i class="neu-icon neu-icon-bell"></i>
+					<span class="notification-number"></span>
+				</a>
+			</li>
+			<li class="top-menu-item">
+				<a class="menu-dropdown">
+					<i class="neu-icon neu-icon-user">&nbsp;admin</i>
+				</a>
+			</li>
+			<li class="top-menu-item">
+				<a class="menu-dropdown">
+					<i class="neu-icon neu-icon-cogs"></i>
+				</a>
+			</li>
+		</ul>
+	</div>
+</section>
+
+<section class="neu-main">
+	<div class="neu-left-menu">
+		<div class="neu-sidebar-toggler">
+			<a href="#" class="neu-icon neu-icon-view_column"></a>
+		</div>
+		<ul>
+			<li class="neu-menu">
+				<a href="#" class="menu-link">
+					<i class="neu-icon neu-icon-safari"></i>
+					<span class="title">用例管理</span>
+					<span class="neu-icon neu-icon-keyboard_arrow_right"></span>
+				</a>
+			</li>
+			<li class="neu-menu">
+				<a href="#" class="menu-link">
+					<i class="neu-icon neu-icon-chrome"></i>
+					<span class="title">参数管理</span>
+					<span class="neu-icon neu-icon-keyboard_arrow_right"></span>
+				</a>
+			</li>
+			<li class="neu-menu active">
+				<a href="#" class="menu-link">
+					<i class="neu-icon neu-icon-firefox"></i>
+					<span class="title">报告管理</span>
+					<span class="neu-icon neu-icon-keyboard_arrow_down"></span>
+				</a>
+
+				<ul class="neu-sub-menu">
+					<li class="menu">
+						<a href="#" class="menu-link">
+							<span class="title">执行测试</span>
+						</a>
+					</li>
+					<li class="neu-menu">
+						<a href="#" class="menu-link">
+							<span class="title">测试报告</span>
+						</a>
+					</li>
+				</ul>
+			</li>
+			<li class="neu-menu">
+				<a href="#" class="menu-link">
+					<i class="neu-icon neu-icon-opera"></i>
+					<span class="title">适配测试</span>
+					<span class="neu-icon neu-icon-keyboard_arrow_right"></span>
+				</a>
+			</li>
+			<li class="neu-menu active">
+				<a href="#" class="menu-link">
+					<i class="neu-icon neu-icon-internet-explorer"></i>
+					<span class="title">系统</span>
+					<span class="neu-icon neu-icon-keyboard_arrow_down"></span>
+				</a>
+				<ul class="neu-sub-menu">
+					<li class="neu-menu">
+						<a href="#" class="menu-link">
+							<span class="title">设备申请</span>
+						</a>
+					</li>
+					<li class="neu-menu">
+						<a href="#" class="menu-link">
+							<span class="title">应用管理</span>
+						</a>
+					</li>
+					<li class="neu-menu">
+						<a href="#" class="menu-link">
+							<span class="title">SQL配置</span>
+						</a>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+	<div class="neu-main-container">
+		<ul class="neu-breadcrumb">
+			<li class="active">
+				<span href="#">主页 / 系统管理 / 项目管理 / 项目信息</span>
+			</li>
+		</ul>
+		<div class="neu-page">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="neu-form-title">项目信息</div>
+					<div class="col-md-12">
+						<form class="form-horizontal" role="form">
+							<div class="form-group">
+								<label for="input-project-no" class="col-sm-1 control-label">项目编号</label>
+								<div class="col-sm-10">
+									<input type="text" class="form-control" id="input-project-no" />
+								</div>
+							</div>
+							<div class="form-group">
+								<label for="input-project-name" class="col-sm-1 control-label">项目名称</label>
+								<div class="col-sm-10">
+									<input type="text" class="form-control" id="input-project-name" />
+								</div>
+							</div>
+							<div class="form-group">
+								<label for="select-is-recycle-frame" class="col-sm-1 control-label">OS类型</label>
+								<div class="col-sm-10">
+									<select class="form-control" id="select-is-recycle-frame">
+										<option>android</option>
+										<option>ios</option>
+									</select>
+								</div>
+							</div>
+							<div class="form-group">
+								<label for="textarea-project-description" class="col-sm-1 control-label">项目描述</label>
+								<div class="col-sm-10">
+									<textarea class="form-control" rows="3" id="textarea-project-description"></textarea>
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="col-sm-offset-1 col-sm-10">
+									<button type="submit" class="btn btn-primary">添加</button>
+									<button type="submit" class="btn btn-default">取消</button>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+
+<script src="../../../vendor/jquery/dist/jquery.js"></script>
+<script src="../../../vendor/pace/pace.min.js"></script>
+<script src="../../../vendor/iCheck/icheck.min.js"></script>
+<script src="../../../../static/app/main.js"></script>
+</body>
+</html>

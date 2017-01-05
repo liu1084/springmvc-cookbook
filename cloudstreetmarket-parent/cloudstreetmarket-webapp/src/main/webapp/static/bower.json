@@ -1,0 +1,24 @@
+{
+  "name": "utf",
+  "description": "utf mobile",
+  "main": "app/index.js",
+  "keywords": [
+    "mobile",
+    "test"
+  ],
+  "homepage": "",
+  "private": true,
+  "dependencies": {
+    "jquery": "~1.11.1",
+    "bootstrap": "~3.3",
+    "pace": "~1.0.2",
+    "normalize-css": "~5",
+    "handlebars": "~4",
+    "lodash": "~4.17.2",
+    "datatables.net": "^1.10.13",
+    "datatables.net-bs": "^1.10.13",
+    "bootstrap-select": "~1.10.0",
+    "handson-table": "",
+    "handsontable": "handson-table#^0.29.2"
+  }
+}

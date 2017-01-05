@@ -1,0 +1,23 @@
+@import "config/config";
+
+.#{$prefix}-container {
+	@import "common/components/_header";
+	.#{$prefix}-main {
+		@import "common/components/_left-menu";
+		.#{$prefix}-main-container {
+			.#{$prefix}-breadcrumb {
+				$breadcrumbHeight: 37;
+				background-color: #d9e1ec;
+				color: #8391ab;
+				height: $breadcrumbHeight * $onePx;
+				line-height: $breadcrumbHeight * $onePx;
+				margin-left: $leftMenuWidth;
+				padding: 0 12 * $onePx;
+			}
+			.#{$prefix}-page {
+
+			}
+		}
+	}
+	@import "common/components/_footer";
+}

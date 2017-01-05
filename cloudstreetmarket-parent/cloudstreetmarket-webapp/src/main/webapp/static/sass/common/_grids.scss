@@ -1,0 +1,16 @@
+@import "susy";
+
+$susy: (
+		columns: 12,
+		gutters: 0,
+		math: fluid,
+		global-box-sizing: border-box,
+		debug: (
+				image: show,
+				color: rgba(#66f, .25),
+				output: background,
+				toggle: top right,
+		),
+);
+
+@include border-box-sizing;

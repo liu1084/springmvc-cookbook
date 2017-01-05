@@ -1,0 +1,8 @@
+@import "../../config/config";
+
+
+.#{$prefix}-main-top {
+	height: $mainTopHeight;
+	line-height: $mainTopHeight;
+	padding: $mainTopPadding
+}

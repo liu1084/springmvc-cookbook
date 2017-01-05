@@ -1,0 +1,5 @@
+@mixin step-width($step) {
+	ol.progresses[data-steps="#{$step}"] li {
+		width: 1/$step * 100%;
+	}
+}

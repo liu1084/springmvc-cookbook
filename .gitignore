@@ -9,3 +9,6 @@ Servers
 classes
 .sass-cache
 node_modules
+vendor
+bower_modules
+dist

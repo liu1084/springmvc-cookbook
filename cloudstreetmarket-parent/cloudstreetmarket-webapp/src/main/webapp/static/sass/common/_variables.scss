@@ -1,0 +1,46 @@
+//base size
+//1px = .0625em, 16px = 1em
+$onePx: .0625rem;
+
+//base font
+$fontSize: 14px;
+$fontFamily: "Microsoft YaHei", "Helvetica Neue Light", "HelveticaNeue-Light", "Helvetica Neue", Calibri, Helvetica, Arial, sans-serif;
+
+//breakpoint
+$breakpoint-sm: 554 * $onePx;
+$breakpoint-md: 768 * $onePx;
+$breakpoint-lg: 992 * $onePx;
+$breakpoint-xl: 1200 * $onePx;
+
+//prefix
+$prefix: 'neu';
+
+//header
+$headerHeight: 50 * $onePx;
+$headerBackgroundColor: #44546e;
+
+//left menu
+$leftMenuWidth: 160 * $onePx;
+$leftMenuMiniWidth: 50 * $onePx;
+$leftMenuTitleWidth: 80 * $onePx;
+
+//breadcrumb
+$breadcrumbHeight: 37 * $onePx;
+$breadcrumbColor: #94999f;
+$breadcrumbBackgroundColor: #f5f6f6;
+$breadcrumbOpacity: .5;
+
+//page
+$leftListWidth: 200 * $onePx;
+
+//top
+$mainTopHeight: 60 * $onePx;
+$mainTopPadding: 30 * $onePx 30 * $onePx 10 * $onePx 30 * $onePx;
+
+//link link/visited/hover/active
+$linkColor: #1FB1EA;
+$linkFontSize: 12 * $onePx;
+
+
+//hosts
+$hostsHeight: 550 * $onePx;

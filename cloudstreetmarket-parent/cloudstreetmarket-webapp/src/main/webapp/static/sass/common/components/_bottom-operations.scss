@@ -1,0 +1,21 @@
+@import "../../config/config";
+
+.#{$prefix}-bottom-operations {
+	background:#f5f6f6;
+	height:50px;
+	padding: 9px 0;
+	text-align: center;
+	position: fixed;
+	bottom: 2px;
+	border-top: 1px solid #eeeeee;
+	border-bottom: 1px solid #eeeeee;
+	width: 100%;
+
+	.bottom-operation {
+		display: inline-block;
+		margin-right: 10px;
+		&:last-of-type {
+			margin-right: 0;
+		}
+	}
+}

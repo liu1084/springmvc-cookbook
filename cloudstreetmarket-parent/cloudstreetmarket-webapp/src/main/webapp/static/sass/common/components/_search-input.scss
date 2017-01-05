@@ -1,0 +1,13 @@
+@import "../../config/_config";
+
+.#{$prefix}-input-search {
+	position: relative;
+	padding: 0 15 * $onePx;
+	margin: 15 * $onePx 0;
+	.#{$prefix}-icon-search {
+		position: absolute;
+		top: 9 * $onePx;
+		right: 20 * $onePx;
+		cursor: pointer;
+	}
+}

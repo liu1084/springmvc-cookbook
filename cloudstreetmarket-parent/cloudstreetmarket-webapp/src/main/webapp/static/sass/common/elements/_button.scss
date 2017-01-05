@@ -1,0 +1,10 @@
+@import "../../config/_config";
+
+//global button
+.#{$prefix}-btn {
+	@include neu-btn();
+}
+
+.#{$prefix}-btn-primary {
+	@include neu-btn-primary();
+}

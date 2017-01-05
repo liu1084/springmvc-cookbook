@@ -1,32 +1,63 @@
 package com.jim.controller;
 
+import com.google.gson.Gson;
 import com.jim.entity.BooksEntity;
 import com.jim.model.hibernate.BookManagementRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
 
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Created by jim on 2017/1/5.
  * This class is ...
  */
-@RestController
-@RequestMapping(value = "/book/api")
-public class BookController {
+@Controller
+@RequestMapping(value = "/book")
+public class BookController extends BaseController {
 	@Autowired
 	private BookManagementRepository bookManagementRepository;
 
-	@RequestMapping(value = {"/", ""}, method = RequestMethod.GET)
-	public List<?> index(){
-		return bookManagementRepository.index();
+	@RequestMapping(value = "/updateBook", method = RequestMethod.GET)
+	public String updateBook(){
+		return "system/book/update-book";
 	}
 
-	@RequestMapping(value = "/id/{id}", method = RequestMethod.GET)
-	public BooksEntity getById(@PathVariable("id") String id){
-		return bookManagementRepository.getById(id);
+	@RequestMapping(value = "/update", method = RequestMethod.POST)
+	public String update(BooksEntity booksEntity, String id){
+		result.clear();
+		try {
+			bookManagementRepository.update(booksEntity, id);
+			result.put("result", 0);
+		}catch (Exception ex){
+			result.put("result", 1);
+			result.put("msg", ex.toString());
+		}
+
+		return gson.toJson(result);
 	}
+
+	@RequestMapping(value = "/createBook", method = RequestMethod.GET)
+	public String createBook(){
+		return "system/book/create-book";
+	}
+
+	@RequestMapping(value = "/save", method = RequestMethod.POST)
+	public String save(BooksEntity booksEntity){
+		result.clear();
+		try {
+			BooksEntity book = bookManagementRepository.create(booksEntity);
+			result.put("result", 0);
+			result.put("msg", book);
+		}catch (Exception ex){
+			result.put("result", 1);
+			result.put("msg", ex.toString());
+		}
+
+		return gson.toJson(result);
+	}
+
 }

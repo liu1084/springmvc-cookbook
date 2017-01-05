@@ -1,0 +1,7 @@
+@import "../../config/config";
+.#{$prefix}-filters {
+	.filter {
+		display: inline-block;
+		margin-right: 15px;
+	}
+}

@@ -1,0 +1,17 @@
+@import "../config/config";
+
+.#{$prefix}-footer {
+	.#{$prefix}-footer-container {
+		.#{$prefix}-footer-item {
+			@include span(3 of 12);
+		}
+		.#{$prefix}-bottom {
+			.#{$prefix}-copyright {
+				@include span(8 of 12);
+			}
+			.#{$prefix}-social {
+				@include span(4 of 12 last);
+			}
+		}
+	}
+}

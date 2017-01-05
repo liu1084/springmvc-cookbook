@@ -1,0 +1,15 @@
+@import "../../config/_config";
+
+//.#{$prefix}-container, .#{$prefix}-main-container {
+//	min-width: 1270px;
+//}
+
+.#{$prefix}-page {
+	padding: 0 30px 20px 30 * $onePx + $leftMenuWidth;
+}
+
+.#{$prefix}-form-title {
+	font-weight: 600;
+	margin: 10 * $onePx 0 30 * $onePx 10 * $onePx;
+	font-size: 12px;
+}

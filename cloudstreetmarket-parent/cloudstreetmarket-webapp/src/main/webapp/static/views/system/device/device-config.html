@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>UTF v2.0</title>
+	<meta charset="UTF-8"/>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta name="viewport"
+		  content="width=device-width, initial-scale=1, maximum-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=0">
+	<title>index</title>
+	<link rel="shortcut icon" href="../../../assets/img/favicon.ico"/>
+	<link rel="stylesheet" href="../../../vendor/normalize-css/normalize.css"/>
+	<link rel="stylesheet" href="../../../vendor/pace/themes/pink/pace-theme-minimal.css"/>
+	<link rel="stylesheet" href="../../../assets/neusoft/bootstrap/css/bootstrap.css"/>
+	<link href="../../../assets/css/icon/fonts.css" rel="stylesheet"/>
+	<link href="../../../dist/css/common/common.css" rel="stylesheet"/>
+	<link href="../../../dist/css/system/device/device-config.css" rel="stylesheet"/>
+</head>
+<body class="neu-container">
+<section class="neu-header">
+	<div class="logo">
+		<a href="/">UniEAP UTF</a>
+	</div>
+
+	<div class="neu-top-menu">
+		<ul>
+			<li class="top-menu-item">
+				<a class="menu-dropdown">
+					<i class="neu-icon neu-icon-bell"></i>
+					<span class="notification-number"></span>
+				</a>
+			</li>
+			<li class="top-menu-item">
+				<a class="menu-dropdown">
+					<i class="neu-icon neu-icon-user">&nbsp;admin</i>
+				</a>
+			</li>
+			<li class="top-menu-item">
+				<a class="menu-dropdown">
+					<i class="neu-icon neu-icon-cogs"></i>
+				</a>
+			</li>
+		</ul>
+	</div>
+</section>
+<section class="neu-main">
+	<div class="neu-left-menu">
+		<div class="neu-sidebar-toggler">
+			<a href="#" class="neu-icon neu-icon-view_column"></a>
+		</div>
+		<ul>
+			<li class="neu-menu">
+				<a href="#" class="menu-link">
+					<i class="neu-icon neu-icon-safari"></i>
+					<span class="title">用例管理</span>
+					<span class="neu-icon neu-icon-keyboard_arrow_right"></span>
+				</a>
+			</li>
+			<li class="neu-menu">
+				<a href="#" class="menu-link">
+					<i class="neu-icon neu-icon-chrome"></i>
+					<span class="title">参数管理</span>
+					<span class="neu-icon neu-icon-keyboard_arrow_right"></span>
+				</a>
+			</li>
+			<li class="neu-menu active">
+				<a href="#" class="menu-link">
+					<i class="neu-icon neu-icon-firefox"></i>
+					<span class="title">报告管理</span>
+					<span class="neu-icon neu-icon-keyboard_arrow_down"></span>
+				</a>
+
+				<ul class="neu-sub-menu">
+					<li class="menu">
+						<a href="#" class="menu-link">
+							<span class="title">执行测试</span>
+						</a>
+					</li>
+					<li class="neu-menu">
+						<a href="#" class="menu-link">
+							<span class="title">测试报告</span>
+						</a>
+					</li>
+				</ul>
+			</li>
+			<li class="neu-menu">
+				<a href="#" class="menu-link">
+					<i class="neu-icon neu-icon-opera"></i>
+					<span class="title">适配测试</span>
+					<span class="neu-icon neu-icon-keyboard_arrow_right"></span>
+				</a>
+			</li>
+			<li class="neu-menu active">
+				<a href="#" class="menu-link">
+					<i class="neu-icon neu-icon-internet-explorer"></i>
+					<span class="title">系统</span>
+					<span class="neu-icon neu-icon-keyboard_arrow_down"></span>
+				</a>
+				<ul class="neu-sub-menu">
+					<li class="neu-menu">
+						<a href="#" class="menu-link">
+							<span class="title">设备申请</span>
+						</a>
+					</li>
+					<li class="neu-menu">
+						<a href="#" class="menu-link">
+							<span class="title">应用管理</span>
+						</a>
+					</li>
+					<li class="neu-menu">
+						<a href="#" class="menu-link">
+							<span class="title">SQL配置</span>
+						</a>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+	<div class="neu-main-container">
+		<ul class="neu-breadcrumb">
+			<li class="active">
+				<span href="#">主页 / 设备管理 / 设备维护 / 手机详细信息</span>
+			</li>
+		</ul>
+		<div class="neu-page">
+			<div class="neu-top-operation">
+				<div class="title">查询条件</div>
+			</div>
+			<ul class="neu-filters">
+				<li class="filter">
+					<label>厂商
+						<select class="neu-select">
+							<option value="huawei">华为</option>
+							<option value="huawei">三星</option>
+						</select>
+					</label>
+				</li>
+				<li class="filter">
+					<label>型号<input type="text" value="" class="neu-input"/></label>
+				</li>
+				<li class="filter">
+					<label>系统版本<input type="text" value="" class="neu-input"/></label>
+				</li>
+				<li class="filter">
+					<label>外观图片
+						<select class="neu-select">
+							<option value="1">已设置</option>
+							<option value="0">未设置</option>
+						</select>
+					</label>
+				</li>
+				<li class="filter">
+					<button class="neu-btn neu-btn-primary">查询</button>
+				</li>
+			</ul>
+			<div class="neu-top-operation">
+				<div class="title">手机列表</div>
+			</div>
+			<div id="neu-users">
+				<table class="table table-hover table-bordered table-condensed">
+					<thead>
+					<tr>
+						<th>厂商</th>
+						<th>型号</th>
+						<th>系统版本</th>
+						<th>分辨率</th>
+						<th>状态</th>
+						<th>使用人</th>
+						<th>到期时间</th>
+						<th>代理IP</th>
+					</tr>
+					</thead>
+					<tbody>
+					<tr>
+						<td>联想</td>
+						<td>x3c70</td>
+						<td>Android 6.0</td>
+						<td>1080*1920</td>
+						<td>空闲</td>
+						<td>lisi</td>
+						<td>2017-01-05 12:00:00</td>
+						<td>10.4.45.46</td>
+					</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</section>
+<script src="../../../vendor/jquery/dist/jquery.js"></script>
+<script src="../../../vendor/pace/pace.min.js"></script>
+</body>
+</html>

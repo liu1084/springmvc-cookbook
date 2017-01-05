@@ -1,0 +1,82 @@
+@import "../../config/_config";
+
+.#{$prefix}-left-menu {
+	width: $leftMenuWidth;
+	top: 50 * $onePx;
+	bottom: 0;
+	background-color: #303c52;
+	float: left;
+	color: #a8b4cc;
+	.#{$prefix}-sidebar-toggler {
+		text-align: center;
+		padding: 10 * $onePx 0;
+	}
+
+	.#{$prefix}-menu {
+		.menu-link {
+			padding: 10 * $onePx 15 * $onePx;
+			display: block;
+
+			.title {
+				display: inline-block;
+				width: $leftMenuTitleWidth;
+				font-size: 14 * $onePx;
+			}
+
+			&.active {
+				background-color: #36455c;
+			}
+
+			&:hover {
+				background-color: #36455c;
+			}
+
+		}
+
+		.#{$prefix}-sub-menu {
+			display: none;
+			.#{$prefix}-menu {
+				.menu-link {
+					padding-left: 40 * $onePx;
+				}
+			}
+		}
+	}
+
+}
+
+.#{$prefix}-left-menu.inactive {
+	width: $leftMenuMiniWidth;
+	top: 50 * $onePx;
+	bottom: 0;
+	background-color: #303c52;
+	float: left;
+	color: #a8b4cc;
+
+	.#{$prefix}-menu {
+		position: relative;
+		.#{$prefix}-sub-menu {
+			display: none;
+			position: absolute;
+			top: 0;
+			left: 0;
+			.#{$prefix}-menu {
+				.menu-link {
+					padding-left: 40 * $onePx;
+				}
+			}
+		}
+	}
+
+	&:after {
+		content: "";
+		display: block;
+		height: 50000 * $onePx;
+		position: fixed;
+		top: 0;
+		background-color: #303c52;
+		width: $leftMenuMiniWidth;
+		z-index: -1;
+		padding-left: $leftMenuMiniWidth;
+	}
+}

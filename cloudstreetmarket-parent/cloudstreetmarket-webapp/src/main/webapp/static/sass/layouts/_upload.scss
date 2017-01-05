@@ -1,0 +1,76 @@
+@import "../config/config";
+
+.adaptive-main {
+	@include container;
+	.top-section {
+		.steps {
+			@include span(70% no-gutter);
+		}
+
+		.operates {
+			@include span(30% no-gutter);
+		}
+
+	}
+
+	.category {
+		.parameters {
+			li {
+				@include span(25% no-gutter);
+			}
+		}
+	}
+
+	#mobileInfo {
+		.left-section {
+			@include span(70% no-gutter);
+		}
+
+		.right-section {
+			@include span(30% no-gutter);
+		}
+	}
+
+	#device-select {
+		.filter {
+			.filter-item {
+				.title {
+					@include span(12% no-gutter);
+				}
+
+				.brands {
+					@include span(88% no-gutter);
+				}
+
+				.versions {
+					@include span(88% no-gutter);
+				}
+
+				.resolutions {
+					@include span(88% no-gutter);
+				}
+			}
+		}
+	}
+
+	#devices {
+		.title {
+
+		}
+
+		.devices {
+			.device {
+				.detail {
+					.thumbnail {
+						@include span (40% no-gutter);
+					}
+					.parameters {
+						@include span (50% no-gutter);
+					}
+				}
+			}
+		}
+	}
+
+	@include border-box-sizing;
+}

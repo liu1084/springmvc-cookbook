@@ -1,0 +1,253 @@
+@import "../../config/config";
+
+.#{$prefix}-container {
+	@import "../../common/components/_header";
+	.#{$prefix}-main {
+		@import "../../common/components/_left-menu";
+		.#{$prefix}-main-container {
+			.#{$prefix}-breadcrumb {
+				$breadcrumbHeight: 37;
+				background-color: #d9e1ec;
+				color: #8391ab;
+				height: $breadcrumbHeight * $onePx;
+				line-height: $breadcrumbHeight * $onePx;
+				margin-left: $leftMenuWidth;
+				padding: 0 12 * $onePx;
+			}
+			.#{$prefix}-page {
+				.#{$prefix}-left-section {
+					width: 390 * $onePx;
+					float: left;
+					border-right: 1px solid #DEE1E3;
+
+					&:after {
+						content: "";
+						display: block;
+						height: 5000px;
+						position: fixed;
+						top: 0;
+						width: 24.375rem;
+						z-index: -1;
+						border-right: 1px solid #DEE1E3;
+					}
+
+					.time-leave {
+						height: 40 * $onePx;
+						line-height: 40 * $onePx;
+						text-align: center;
+						.title {
+							font-size: 12px;
+							color: #1fb1ea;
+							line-height: 12px;
+						}
+					}
+
+					.select-with-detail-icon {
+						padding: 0 15px;
+						margin-bottom: 30px;
+						height: 34px;
+						position: relative;
+						.mobile-show-detail {
+							@include border-radius(100%);
+							background: #f5f6f6;
+							border: 1px solid #dee1e3;
+							width: 30px;
+							height: 30px;
+							display: inline-block;
+							position: absolute;
+							top: 3px;
+
+							.neu-icon {
+								position: absolute;
+								top: 6px;
+								left: 7px;
+								cursor: pointer;
+							}
+						}
+
+						.neu-mobile-select {
+							display: inline-block;
+							width: 316 * $onePx;
+							position: absolute;
+							left: 60px;
+						}
+					}
+
+					.#{$prefix}-mobile-screen {
+						.#{$prefix}-mobile-operation-buttons {
+							width: 62px;
+							float: left;
+							padding: 0 15 * $onePx;
+
+							.#{$prefix}-mobile-operation-button {
+								text-align: center;
+								margin: 15px 0;
+								cursor: pointer;
+								@include border-radius(100%);
+								background: #f5f6f6;
+								border: 1px solid #dee1e3;
+								width: 30px;
+								height: 30px;
+								position: relative;
+								.#{$prefix}-icon {
+									position: absolute;
+									top: 6px;
+									left: 6px;
+								}
+
+								&.active, &:hover {
+									background: #1fb1ea;
+									color: #fff;
+								}
+							}
+						}
+
+						.mobile-screen {
+							margin-left: 62px;
+							width: 315px;
+							height: 636px;
+							background: url("../../../../assets/img/mobile.png") no-repeat center center transparent;
+							position: relative;
+
+							.mobile-screen-content {
+								border: 2px solid #f00;
+								height: 509px;
+								width: 286px;
+								position: absolute;
+								top: 60px;
+								left: 15px;
+							}
+
+							.mobile-buttons {
+								.mobile-button {
+									display: inline-block;
+									width: 50px;
+									position: absolute;
+									bottom: 20px;
+									left: 30px;
+									border: 2px solid #0f0;
+									height: 25px;
+									cursor: pointer;
+								}
+
+								.switch-button {
+									left: 50px;
+								}
+
+								.home-button {
+									left: 130px;
+								}
+
+								.return-button {
+									left: 210px;
+								}
+							}
+
+
+						}
+
+						.resolution-switch {
+							text-align: center;
+							height: 80px;
+							line-height: 80px;
+							margin-left: 62px;
+							label {
+								margin: 0 15px;
+							}
+						}
+					}
+				}
+
+				.#{$prefix}-right-section {
+					margin-left: 390 * $onePx;
+					height: 43px;
+
+					.#{$prefix}-tab {
+						.#{$prefix}-tab-nav {
+							line-height: 43px;
+							width: 66px;
+							font-size: 12px;
+							color: #656a71;
+							text-align: center;
+							display: inline-block;
+							cursor: pointer;
+							&.active {
+								border-bottom: 3px solid #1fb1ea;
+								color: #1fb1ea;
+								font-weight: bold;
+							}
+						}
+					}
+
+					.#{$prefix}-tab-contents {
+						padding: 30px;
+						.operations {
+							display: inline-block;
+							float: right;
+							.operation {
+								display: inline-block;
+								margin-right: 10px;
+								cursor: pointer;
+							}
+						}
+						.main-device-top {
+							margin-bottom: 30px;
+							height: 34px;
+							line-height: 34px;
+							.log-filters {
+								display: inline-block;
+								.filter {
+									display: inline-block;
+									margin-right: 20px;
+								}
+
+								input[type=text], select {
+									width: 75px;
+								}
+							}
+
+						}
+
+						.main-device-log {
+							max-height: 280px;
+							overflow-y: auto;
+							border-top: 1px solid #DEE1E3;
+							border-bottom: 1px solid #DEE1E3;
+							padding: 15px 0;
+
+							table {
+								tr {
+									height: 40px;
+									cursor: pointer;
+									&:hover, &.active {
+										color: #1fb1ea;
+										font-weight: bold;
+									}
+
+									td {
+										padding-right: 15px;
+									}
+								}
+							}
+						}
+
+						.main-chart-top {
+							height: 80px;
+							line-height: 80px;
+						}
+
+						.echarts {
+							.echart {
+								height: 200px;
+								width: 100%;
+								border: 1px solid #eee;
+								margin-bottom: 20px;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	@import "../../common/components/_footer";
+}

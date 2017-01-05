@@ -1,0 +1,16 @@
+@import "../../config/config";
+
+.#{$prefix}-item-operations {
+	position: absolute;
+	top:10px;
+	right: 10px;
+	display: none;
+	.item-operation{
+		display: inline-block;
+		cursor: pointer;
+		margin-left: 3px;
+		.#{$prefix}-icon{
+			font-size: 10px;
+		}
+	}
+}

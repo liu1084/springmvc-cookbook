@@ -1,0 +1,17 @@
+@import "../../config/_config";
+@import "../_mixins";
+
+$topHeight: 80 * $onePx;
+
+.top-section {
+	height: $topHeight;
+	box-shadow: 0 0.5px 0 0 #dee3e8;
+	padding: 0 100 * $onePx;
+	.operates {
+		height: $topHeight;
+		line-height: $topHeight;
+		button {
+			@include button();
+		}
+	}
+}

@@ -1,0 +1,7 @@
+@import "../../config/_config";
+
+a, a:link, a:visited, a:hover, a:active {
+	text-decoration: none;
+	color: $linkColor;
+	cursor: pointer;
+}

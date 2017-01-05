@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>UTF v5.0</title>
+	<meta charset="UTF-8"/>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=0">
+	<title>UTF v5 -- 设备操作</title>
+	<link rel="shortcut icon" href="../../../../static/assets/img/favicon.ico"/>
+	<link rel="stylesheet" href="../../../../static/vendor/normalize-css/normalize.css"/>
+	<link rel="stylesheet" href="../../../../static/vendor/pace/themes/pink/pace-theme-minimal.css"/>
+	<link rel="stylesheet" href="../../../../static/vendor/iCheck/skins/all.css"/>
+	<link rel="stylesheet" href="../../../../static/assets/neusoft/bootstrap/css/bootstrap.css"/>
+	<link href="../../../../static/assets/css/icon/fonts.css" rel="stylesheet"/>
+	<link rel="stylesheet" href="../../../../static/assets/neusoft/dataTables/themes/default/grid.css"/>
+	<link rel="stylesheet" href="../../../../static/assets/neusoft/fontello/css/fontello.css"/>
+
+	<link href="../../../../static/dist/css/common/common.css" rel="stylesheet"/>
+	<link href="../../../../static/dist/css/user/device/device-operation.css" rel="stylesheet"/>
+</head>
+<body class="neu-container">
+<section class="neu-header">
+	<div class="logo">
+		<a href="../../../..">UniEAP UTF</a>
+	</div>
+	<div class="neu-top-menu">
+		<ul>
+			<li class="top-menu-item">
+				<a class="menu-dropdown">
+					<i class="neu-icon neu-icon-bell"></i>
+					<span class="notification-number"></span>
+				</a>
+			</li>
+			<li class="top-menu-item">
+				<a class="menu-dropdown">
+					<i class="neu-icon neu-icon-user">&nbsp;admin</i>
+				</a>
+			</li>
+			<li class="top-menu-item">
+				<a class="menu-dropdown">
+					<i class="neu-icon neu-icon-cogs"></i>
+				</a>
+			</li>
+		</ul>
+	</div>
+</section>
+<section class="neu-main">
+	<div class="neu-left-menu">
+		<div class="neu-sidebar-toggler">
+			<a href="#" class="neu-icon neu-icon-view_column"></a>
+		</div>
+		<ul>
+			<li class="neu-menu">
+				<a href="#" class="menu-link">
+					<i class="neu-icon neu-icon-safari"></i>
+					<i class="title">仪表盘</i>
+				</a>
+			</li>
+			<li class="neu-menu">
+				<a href="#" class="menu-link">
+					<i class="neu-icon neu-icon-chrome"></i>
+					<i class="title">系统管理</i>
+					<i class="neu-icon neu-icon-keyboard_arrow_right"></i>
+				</a>
+				<ul class="neu-sub-menu">
+					<li class="neu-menu">
+						<a href="#" class="menu-link account maintenance">
+							<span class="title">账户管理</span>
+						</a>
+					</li>
+					<li class="neu-menu">
+						<a href="#" class="menu-link project maintenance">
+							<span class="title">项目管理</span>
+						</a>
+					</li>
+					<li class="neu-menu">
+						<a href="#" class="menu-link">
+							<span class="title">配置管理</span>
+						</a>
+					</li>
+				</ul>
+			</li>
+			<li class="neu-menu">
+				<a href="#" class="menu-link">
+					<i class="neu-icon neu-icon-firefox"></i>
+					<i class="title">手机管理</i>
+					<i class="neu-icon neu-icon-keyboard_arrow_right"></i>
+				</a>
+
+				<ul class="neu-sub-menu">
+					<li class="neu-menu">
+						<a href="#" class="menu-link">
+							<span class="title">手机维护</span>
+						</a>
+					</li>
+					<li class="neu-menu">
+						<a href="#" class="menu-link">
+							<span class="title">属性配置</span>
+						</a>
+					</li>
+				</ul>
+			</li>
+			<li class="neu-menu">
+				<a href="#" class="menu-link">
+					<i class="neu-icon neu-icon-opera"></i>
+					<i class="title">适配测试</i>
+					<i class="neu-icon neu-icon-keyboard_arrow_right"></i>
+				</a>
+			</li>
+			<li class="neu-menu">
+				<a href="#" class="menu-link">
+					<i class="neu-icon neu-icon-internet-explorer"></i>
+					<i class="title">系统</i>
+					<i class="neu-icon neu-icon-keyboard_arrow_right"></i>
+				</a>
+				<ul class="neu-sub-menu">
+					<li class="neu-menu">
+						<a href="#" class="menu-link">
+							<span class="title">设备申请</span>
+						</a>
+					</li>
+					<li class="neu-menu">
+						<a href="#" class="menu-link">
+							<span class="title">应用管理</span>
+						</a>
+					</li>
+					<li class="neu-menu">
+						<a href="#" class="menu-link">
+							<span class="title">SQL配置</span>
+						</a>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+	<div class="neu-main-container">
+		<ul class="neu-breadcrumb">
+			<li class="active">
+				<a href="#">主页 / 设备 / 手工测试</a>
+			</li>
+		</ul>
+		<div class="neu-page">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="neu-left-section">
+						<div class="time-leave">
+							<span class="title">剩余时间:3小时45分43秒</span>
+						</div>
+						<div class="select-with-detail-icon">
+							<div class="mobile-show-detail">
+								<i class="neu-icon neu-icon-info-circle"></i>
+							</div>
+							<select class="form-control neu-mobile-select">
+								<option>华为荣耀8</option>
+								<option>华为荣耀18</option>
+								<option>华为荣耀28</option>
+							</select>
+						</div>
+						<div class="neu-mobile-screen" id="neu-mobile-screen">
+							<ul class="neu-mobile-operation-buttons">
+								<li class="neu-mobile-operation-button active">
+									<i class="neu-icon neu-icon-refresh"></i>
+								</li>
+								<li class="neu-mobile-operation-button">
+									<i class="neu-icon neu-icon-refresh"></i>
+								</li>
+								<li class="neu-mobile-operation-button">
+									<i class="neu-icon neu-icon-refresh"></i>
+								</li>
+								<li class="neu-mobile-operation-button">
+									<i class="neu-icon neu-icon-refresh"></i>
+								</li>
+								<li class="neu-mobile-operation-button">
+									<i class="neu-icon neu-icon-refresh"></i>
+								</li>
+								<li class="neu-mobile-operation-button">
+									<i class="neu-icon neu-icon-refresh"></i>
+								</li>
+								<li class="neu-mobile-operation-button">
+									<i class="neu-icon neu-icon-refresh"></i>
+								</li>
+								<li class="neu-mobile-operation-button">
+									<i class="neu-icon neu-icon-refresh"></i>
+								</li>
+								<li class="neu-mobile-operation-button">
+									<i class="neu-icon neu-icon-refresh"></i>
+								</li>
+								<li class="neu-mobile-operation-button">
+									<i class="neu-icon neu-icon-refresh"></i>
+								</li>
+								<li class="neu-mobile-operation-button">
+									<i class="neu-icon neu-icon-refresh"></i>
+								</li>
+								<li class="neu-mobile-operation-button">
+									<i class="neu-icon neu-icon-refresh"></i>
+								</li>
+								<li class="neu-mobile-operation-button">
+									<i class="neu-icon neu-icon-refresh"></i>
+								</li>
+
+							</ul>
+							<div class="mobile-screen">
+								<div class="mobile-screen-content"></div>
+								<ul class="mobile-buttons">
+									<li class="mobile-button switch-button" title="switch-button"></li>
+									<li class="mobile-button home-button" title="home-button"></li>
+									<li class="mobile-button return-button" title="return-button"></li>
+								</ul>
+							</div>
+							<div class="resolution-switch">
+								<label><input type="radio" value="high" name="resolution"/>高清</label>
+								<label><input type="radio" value="basic" name="resolution" />标准</label>
+							</div>
+						</div>
+					</div>
+					<div class="neu-right-section">
+						<ul class="neu-tab">
+							<li class="neu-tab-nav active">监控</li>
+							<li class="neu-tab-nav">快照</li>
+						</ul>
+						<ul class="neu-tab-contents">
+							<li class="neu-tab-content">
+								<form class="main-device-top form-inline">
+									<ul class="log-filters">
+										<li class="filter">
+											<select class="form-control">
+												<option>全部</option>
+												<option>Debug</option>
+												<option>Info</option>
+												<option>Error</option>
+											</select>
+										</li>
+										<li class="filter">时间</li>
+										<li class="filter">
+											<input class="form-control" type="text" value="" placeholder="PID">
+										</li>
+										<li class="filter">
+											<input class="form-control" type="text" value="" placeholder="TAG">
+										</li>
+									</ul>
+									<ul class="operations">
+										<li class="operation">
+											<label><input type="radio" class="form-control" name="category" checked />应用日志</label>
+											<label><input type="radio" class="form-control" name="category" checked />系统日志</label>
+										</li>
+										<li class="neu-icon neu-icon-pause operation"></li>
+										<li class="neu-icon neu-icon-download operation"></li>
+										<li class="neu-icon neu-icon-recycle operation"></li>
+									</ul>
+								</form>
+
+								<div class="main-device-log">
+									<table>
+										<tbody>
+										<tr>
+											<td>VERBOSE</td>
+											<td>12:18:58</td>
+											<td>10240</td>
+											<td>ProcessCPUTacker</td>
+											<td>cpu4 time _in_state not exit,is it a bug ? cpu4...</td>
+										</tr>
+										<tr>
+											<td>VERBOSE</td>
+											<td>12:18:58</td>
+											<td>10240</td>
+											<td>ProcessCPUTacker</td>
+											<td>cpu4 time _in_state not exit,is it a bug ? cpu4...</td>
+										</tr>
+										<tr>
+											<td>VERBOSE</td>
+											<td>12:18:58</td>
+											<td>10240</td>
+											<td>ProcessCPUTacker</td>
+											<td>cpu4 time _in_state not exit,is it a bug ? cpu4...</td>
+										</tr>
+										<tr>
+											<td>VERBOSE</td>
+											<td>12:18:58</td>
+											<td>10240</td>
+											<td>ProcessCPUTacker</td>
+											<td>cpu4 time _in_state not exit,is it a bug ? cpu4...</td>
+										</tr>
+										<tr>
+											<td>VERBOSE</td>
+											<td>12:18:58</td>
+											<td>10240</td>
+											<td>ProcessCPUTacker</td>
+											<td>cpu4 time _in_state not exit,is it a bug ? cpu4...</td>
+										</tr>
+										<tr>
+											<td>VERBOSE</td>
+											<td>12:18:58</td>
+											<td>10240</td>
+											<td>ProcessCPUTacker</td>
+											<td>cpu4 time _in_state not exit,is it a bug ? cpu4...</td>
+										</tr>
+										<tr>
+											<td>VERBOSE</td>
+											<td>12:18:58</td>
+											<td>10240</td>
+											<td>ProcessCPUTacker</td>
+											<td>cpu4 time _in_state not exit,is it a bug ? cpu4...</td>
+										</tr>
+										<tr>
+											<td>VERBOSE</td>
+											<td>12:18:58</td>
+											<td>10240</td>
+											<td>ProcessCPUTacker</td>
+											<td>cpu4 time _in_state not exit,is it a bug ? cpu4...</td>
+										</tr>
+										<tr>
+											<td>VERBOSE</td>
+											<td>12:18:58</td>
+											<td>10240</td>
+											<td>ProcessCPUTacker</td>
+											<td>cpu4 time _in_state not exit,is it a bug ? cpu4...</td>
+										</tr>
+										<tr>
+											<td>VERBOSE</td>
+											<td>12:18:58</td>
+											<td>10240</td>
+											<td>ProcessCPUTacker</td>
+											<td>cpu4 time _in_state not exit,is it a bug ? cpu4...</td>
+										</tr>
+										<tr>
+											<td>VERBOSE</td>
+											<td>12:18:58</td>
+											<td>10240</td>
+											<td>ProcessCPUTacker</td>
+											<td>cpu4 time _in_state not exit,is it a bug ? cpu4...</td>
+										</tr>
+										<tr>
+											<td>VERBOSE</td>
+											<td>12:18:58</td>
+											<td>10240</td>
+											<td>ProcessCPUTacker</td>
+											<td>cpu4 time _in_state not exit,is it a bug ? cpu4...</td>
+										</tr>
+										<tr>
+											<td>VERBOSE</td>
+											<td>12:18:58</td>
+											<td>10240</td>
+											<td>ProcessCPUTacker</td>
+											<td>cpu4 time _in_state not exit,is it a bug ? cpu4...</td>
+										</tr>
+										<tr>
+											<td>VERBOSE</td>
+											<td>12:18:58</td>
+											<td>10240</td>
+											<td>ProcessCPUTacker</td>
+											<td>cpu4 time _in_state not exit,is it a bug ? cpu4...</td>
+										</tr>
+										<tr>
+											<td>VERBOSE</td>
+											<td>12:18:58</td>
+											<td>10240</td>
+											<td>ProcessCPUTacker</td>
+											<td>cpu4 time _in_state not exit,is it a bug ? cpu4...</td>
+										</tr>
+										<tr>
+											<td>VERBOSE</td>
+											<td>12:18:58</td>
+											<td>10240</td>
+											<td>ProcessCPUTacker</td>
+											<td>cpu4 time _in_state not exit,is it a bug ? cpu4...</td>
+										</tr>
+										<tr>
+											<td>VERBOSE</td>
+											<td>12:18:58</td>
+											<td>10240</td>
+											<td>ProcessCPUTacker</td>
+											<td>cpu4 time _in_state not exit,is it a bug ? cpu4...</td>
+										</tr>
+										<tr>
+											<td>VERBOSE</td>
+											<td>12:18:58</td>
+											<td>10240</td>
+											<td>ProcessCPUTacker</td>
+											<td>cpu4 time _in_state not exit,is it a bug ? cpu4...</td>
+										</tr>
+										<tr>
+											<td>VERBOSE</td>
+											<td>12:18:58</td>
+											<td>10240</td>
+											<td>ProcessCPUTacker</td>
+											<td>cpu4 time _in_state not exit,is it a bug ? cpu4...</td>
+										</tr>
+										<tr>
+											<td>VERBOSE</td>
+											<td>12:18:58</td>
+											<td>10240</td>
+											<td>ProcessCPUTacker</td>
+											<td>cpu4 time _in_state not exit,is it a bug ? cpu4...</td>
+										</tr>
+										<tr>
+											<td>VERBOSE</td>
+											<td>12:18:58</td>
+											<td>10240</td>
+											<td>ProcessCPUTacker</td>
+											<td>cpu4 time _in_state not exit,is it a bug ? cpu4...</td>
+										</tr>
+										<tr>
+											<td>VERBOSE</td>
+											<td>12:18:58</td>
+											<td>10240</td>
+											<td>ProcessCPUTacker</td>
+											<td>cpu4 time _in_state not exit,is it a bug ? cpu4...</td>
+										</tr>
+										</tbody>
+									</table>
+								</div>
+
+								<form class="main-chart-top form-inline">
+									<ul class="log-filter">
+										<li class="operations">
+											<ul>
+												<li class="neu-icon neu-icon-pause operation"></li>
+												<li class="neu-icon neu-icon-download operation"></li>
+												<li class="neu-icon neu-icon-recycle operation"></li>
+											</ul>
+										</li>
+									</ul>
+								</form>
+
+								<ul class="echarts">
+									<li class="echart"></li>
+									<li class="echart"></li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<!-- Vendors -->
+<script src="../../../../static/vendor/jquery/dist/jquery.js"></script>
+<script src="../../../../static/vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="../../../../static/vendor/datatables.net/js/jquery.dataTables.min.js"></script>
+<script src="../../../../static/vendor/handlebars/handlebars.js"></script>
+<script src="../../../../static/vendor/pace/pace.min.js"></script>
+<script src="../../../../static/vendor/iCheck/icheck.min.js"></script>
+<script src="../../../../static/vendor/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+<script src="../../../../static/vendor/lodash/dist/lodash.core.min.js"></script>
+<script src="../../../../static/vendor/echarts/echarts.min.js"></script>
+
+
+<!-- template -->
+<script src="../../../../static/dist/templates.js"></script>
+<!-- namespace -->
+<script src="../../../../static/app/main.js"></script>
+<!-- DS -->
+<script src="../../../../static/vendor/unieap/ds/DataCenter.js"></script>
+<script src="../../../../static/vendor/unieap/ds/DataStore.js"></script>
+<script src="../../../../static/vendor/unieap/ds/MetaData.js"></script>
+<script src="../../../../static/vendor/unieap/ds/Row.js"></script>
+<script src="../../../../static/vendor/unieap/ds/RowSet.js"></script>
+<script src="../../../../static/vendor/unieap/util/util.js"></script>
+<!-- components -->
+<script src="../../../../static/app/components/common/load-view.js"></script>
+<script src="../../../../static/app/components/navigator/nav.js"></script>
+<script src="../../../../static/app/components/common/handle-render.js"></script>
+<script src="../../../../static/app/components/common/ajax.js"></script>
+
+<script type="text/javascript">
+	var appPath = "/utf";
+	var CONTAINER = document.getElementsByClassName('neu-page')[0];
+
+
+</script>
+
+<script type="text/javascript">
+	var echartNodes = document.getElementsByClassName('echart');
+	var node1 = echartNodes[0];
+	// 基于准备好的dom，初始化echarts实例
+	var myChart1 = echarts.init(node1);
+
+	// 指定图表的配置项和数据
+	var option1 = {
+		title: {
+			text: 'test'
+		},
+		tooltip: {},
+		legend: {
+			data:['销量']
+		},
+		xAxis: {
+			data: ["衬衫","羊毛衫","雪纺衫","裤子","高跟鞋","袜子"]
+		},
+		yAxis: {},
+		series: [{
+			name: '销量',
+			type: 'bar',
+			data: [5, 20, 36, 10, 10, 20]
+		}]
+	};
+
+	// 使用刚指定的配置项和数据显示图表。
+	myChart1.setOption(option1);
+
+
+	var node2 = echartNodes[1];
+	// 基于准备好的dom，初始化echarts实例
+	var myChart2 = echarts.init(node2);
+
+	// 指定图表的配置项和数据
+	var option2 = {
+		title: {
+			text: 'test2'
+		},
+		tooltip: {},
+		legend: {
+			data:['销量']
+		},
+		xAxis: {
+			data: ["衬衫","羊毛衫","雪纺衫","裤子","高跟鞋","袜子"]
+		},
+		yAxis: {},
+		series: [{
+			name: '销量',
+			type: 'line',
+			data: [5, 20, 36, 10, 10, 20]
+		}]
+	};
+
+	// 使用刚指定的配置项和数据显示图表。
+	myChart2.setOption(option2);
+</script>
+</body>
+</html>

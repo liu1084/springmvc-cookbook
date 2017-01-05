@@ -1,0 +1,17 @@
+@import "variables";
+@import "mixins";
+
+body {
+	font-family: $fontFamily;
+	font-size: $fontSize;
+}
+
+
+.full-width {
+	@include full-width();
+}
+
+textarea {
+	resize: vertical;
+}
+

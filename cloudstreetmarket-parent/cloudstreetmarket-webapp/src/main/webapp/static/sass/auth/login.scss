@@ -1,0 +1,36 @@
+@import "../config/_config";
+
+.#{$prefix}-container {
+	background-color: #f3f3f4;
+	font-family: $fontFamily;
+	.#{$prefix}-main {
+		.#{$prefix}-main-container {
+			.#{$prefix}-login {
+				padding-top: 50 * $onePx;
+				width: 300 * $onePx;
+				max-width: 400 * $onePx;
+				margin: 0 auto;
+				.title {
+					font-size: 100px;
+					text-align: center;
+					margin-bottom: 15 * $onePx;
+					.logo-name {
+						color: #e6e6e6;
+						font-weight: 800;
+						letter-spacing: -10px;
+						margin-bottom: 0;
+					}
+				}
+
+				.#{$prefix}-login-form {
+					input {
+						@include single-input();
+					}
+				}
+				.copyright{
+					text-align: center;
+				}
+			}
+		}
+	}
+}

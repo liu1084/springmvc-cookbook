@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>UTF v2.0</title>
+	<meta charset="UTF-8"/>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=0">
+	<title>UTF v2 -- Dashboard</title>
+	<link rel="shortcut icon" href="../assets/img/favicon.ico"/>
+	<link rel="stylesheet" href="../vendor/normalize-css/normalize.css"/>
+	<link rel="stylesheet" href="../vendor/pace/themes/pink/pace-theme-minimal.css"/>
+	<link rel="stylesheet" href="../vendor/bootstrap/dist/css/bootstrap.css"/>
+	<link href="../assets/css/icon/fonts.css" rel="stylesheet"/>
+	<link href="../dist/css/dashboard.css" rel="stylesheet"/>
+</head>
+<body class="neu-container">
+<section class="neu-header">
+	<div class="logo">
+		<a href="/">
+			<img src="../assets/img/acap-logo.png" alt="UTF v2.0"/>
+		</a>
+	</div>
+
+	<div class="neu-top-menu">
+		<ul>
+			<li class="top-menu-item">
+				<a class="menu-dropdown">
+					<i class="neu-icon neu-icon-bell"></i>
+					<span class="notification-number"></span>
+				</a>
+			</li>
+			<li class="top-menu-item">
+				<a class="menu-dropdown">
+					<i class="neu-icon neu-icon-user">&nbsp;admin</i>
+				</a>
+			</li>
+			<li class="top-menu-item">
+				<a class="menu-dropdown">
+					<i class="neu-icon neu-icon-cogs"></i>
+				</a>
+			</li>
+		</ul>
+	</div>
+</section>
+
+<section class="neu-main">
+	<div class="neu-left-menu">
+		<div class="neu-sidebar-toggler">
+			<a href="#" class="neu-icon neu-icon-view_column"></a>
+		</div>
+		<ul>
+			<li class="neu-menu">
+				<a href="dashboard.html" class="menu-link">
+					<i class="neu-icon neu-icon-safari"></i>
+					<i class="title">仪表盘</i>
+				</a>
+			</li>
+			<li class="neu-menu">
+				<a href="#" class="menu-link">
+					<i class="neu-icon neu-icon-chrome"></i>
+					<i class="title">系统管理</i>
+					<i class="neu-icon neu-icon-keyboard_arrow_right"></i>
+				</a>
+				<ul class="neu-sub-menu">
+					<li class="neu-menu">
+						<a href="#" class="menu-link">
+							<span class="title">账户管理</span>
+						</a>
+					</li>
+					<li class="neu-menu">
+						<a href="#" class="menu-link">
+							<span class="title">项目管理</span>
+						</a>
+					</li>
+					<li class="neu-menu">
+						<a href="#" class="menu-link">
+							<span class="title">配置管理</span>
+						</a>
+					</li>
+				</ul>
+			</li>
+			<li class="neu-menu">
+				<a href="#" class="menu-link">
+					<i class="neu-icon neu-icon-firefox"></i>
+					<i class="title">手机管理</i>
+					<i class="neu-icon neu-icon-keyboard_arrow_right"></i>
+				</a>
+
+				<ul class="neu-sub-menu">
+					<li class="neu-menu">
+						<a href="device/1-mobile-maintenance.html" class="menu-link">
+							<span class="title">手机维护</span>
+						</a>
+					</li>
+					<li class="neu-menu">
+						<a href="#" class="menu-link">
+							<span class="title">属性配置</span>
+						</a>
+					</li>
+				</ul>
+			</li>
+			<li class="neu-menu">
+				<a href="#" class="menu-link">
+					<i class="neu-icon neu-icon-opera"></i>
+					<i class="title">适配测试</i>
+					<i class="neu-icon neu-icon-keyboard_arrow_right"></i>
+				</a>
+			</li>
+			<li class="neu-menu">
+				<a href="#" class="menu-link">
+					<i class="neu-icon neu-icon-internet-explorer"></i>
+					<i class="title">系统</i>
+					<i class="neu-icon neu-icon-keyboard_arrow_right"></i>
+				</a>
+				<ul class="neu-sub-menu">
+					<li class="neu-menu">
+						<a href="#" class="menu-link">
+							<span class="title">设备申请</span>
+						</a>
+					</li>
+					<li class="neu-menu">
+						<a href="#" class="menu-link">
+							<span class="title">应用管理</span>
+						</a>
+					</li>
+					<li class="neu-menu">
+						<a href="#" class="menu-link">
+							<span class="title">SQL配置</span>
+						</a>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+	<div class="neu-main-container">
+		<ul class="neu-breadcrumb">
+			<li class="active">
+				<a href="#">Dashboard</a>
+			</li>
+		</ul>
+		<div class="neu-page">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-md-12">
+						<button type="button" class="btn btn-default btn-primary">账户管理</button>
+						<button type="button" class="btn btn-default btn-primary">项目管理</button>
+						<button type="button" class="btn btn-default btn-primary">手机管理</button>
+					</div>
+				</div>
+				<!--<div class="row">-->
+					<!--<div class="col-md-6">-->
+						<!--<div class="row">-->
+							<!--<div class="col-md-12">-->
+							<!--</div>-->
+						<!--</div>-->
+						<!--<div class="row">-->
+							<!--<div class="col-md-12">-->
+								<!--<img alt="Bootstrap Image Preview" src="http://lorempixel.com/140/140/" />-->
+							<!--</div>-->
+						<!--</div>-->
+						<!--<div class="row">-->
+							<!--<div class="col-md-12">-->
+								<!--<img alt="Bootstrap Image Preview" src="http://lorempixel.com/140/140/" />-->
+							<!--</div>-->
+						<!--</div>-->
+						<!--<div class="row">-->
+							<!--<div class="col-md-12">-->
+								<!--<table class="table">-->
+									<!--<thead>-->
+									<!--<tr>-->
+										<!--<th>-->
+											<!--#-->
+										<!--</th>-->
+										<!--<th>-->
+											<!--Product-->
+										<!--</th>-->
+										<!--<th>-->
+											<!--Payment Taken-->
+										<!--</th>-->
+										<!--<th>-->
+											<!--Status-->
+										<!--</th>-->
+									<!--</tr>-->
+									<!--</thead>-->
+									<!--<tbody>-->
+									<!--<tr>-->
+										<!--<td>-->
+											<!--1-->
+										<!--</td>-->
+										<!--<td>-->
+											<!--TB - Monthly-->
+										<!--</td>-->
+										<!--<td>-->
+											<!--01/04/2012-->
+										<!--</td>-->
+										<!--<td>-->
+											<!--Default-->
+										<!--</td>-->
+									<!--</tr>-->
+									<!--<tr class="active">-->
+										<!--<td>-->
+											<!--1-->
+										<!--</td>-->
+										<!--<td>-->
+											<!--TB - Monthly-->
+										<!--</td>-->
+										<!--<td>-->
+											<!--01/04/2012-->
+										<!--</td>-->
+										<!--<td>-->
+											<!--Approved-->
+										<!--</td>-->
+									<!--</tr>-->
+									<!--<tr class="success">-->
+										<!--<td>-->
+											<!--2-->
+										<!--</td>-->
+										<!--<td>-->
+											<!--TB - Monthly-->
+										<!--</td>-->
+										<!--<td>-->
+											<!--02/04/2012-->
+										<!--</td>-->
+										<!--<td>-->
+											<!--Declined-->
+										<!--</td>-->
+									<!--</tr>-->
+									<!--<tr class="warning">-->
+										<!--<td>-->
+											<!--3-->
+										<!--</td>-->
+										<!--<td>-->
+											<!--TB - Monthly-->
+										<!--</td>-->
+										<!--<td>-->
+											<!--03/04/2012-->
+										<!--</td>-->
+										<!--<td>-->
+											<!--Pending-->
+										<!--</td>-->
+									<!--</tr>-->
+									<!--<tr class="danger">-->
+										<!--<td>-->
+											<!--4-->
+										<!--</td>-->
+										<!--<td>-->
+											<!--TB - Monthly-->
+										<!--</td>-->
+										<!--<td>-->
+											<!--04/04/2012-->
+										<!--</td>-->
+										<!--<td>-->
+											<!--Call in to confirm-->
+										<!--</td>-->
+									<!--</tr>-->
+									<!--</tbody>-->
+								<!--</table>-->
+							<!--</div>-->
+						<!--</div>-->
+					<!--</div>-->
+					<!--<div class="col-md-6">-->
+						<!--<div class="row">-->
+							<!--<div class="col-md-12">-->
+								<!--<img alt="Bootstrap Image Preview" src="http://lorempixel.com/140/140/" />-->
+							<!--</div>-->
+						<!--</div>-->
+						<!--<div class="row">-->
+							<!--<div class="col-md-12">-->
+								<!--<table class="table">-->
+									<!--<thead>-->
+									<!--<tr>-->
+										<!--<th>-->
+											<!--#-->
+										<!--</th>-->
+										<!--<th>-->
+											<!--Product-->
+										<!--</th>-->
+										<!--<th>-->
+											<!--Payment Taken-->
+										<!--</th>-->
+										<!--<th>-->
+											<!--Status-->
+										<!--</th>-->
+									<!--</tr>-->
+									<!--</thead>-->
+									<!--<tbody>-->
+									<!--<tr>-->
+										<!--<td>-->
+											<!--1-->
+										<!--</td>-->
+										<!--<td>-->
+											<!--TB - Monthly-->
+										<!--</td>-->
+										<!--<td>-->
+											<!--01/04/2012-->
+										<!--</td>-->
+										<!--<td>-->
+											<!--Default-->
+										<!--</td>-->
+									<!--</tr>-->
+									<!--<tr class="active">-->
+										<!--<td>-->
+											<!--1-->
+										<!--</td>-->
+										<!--<td>-->
+											<!--TB - Monthly-->
+										<!--</td>-->
+										<!--<td>-->
+											<!--01/04/2012-->
+										<!--</td>-->
+										<!--<td>-->
+											<!--Approved-->
+										<!--</td>-->
+									<!--</tr>-->
+									<!--<tr class="success">-->
+										<!--<td>-->
+											<!--2-->
+										<!--</td>-->
+										<!--<td>-->
+											<!--TB - Monthly-->
+										<!--</td>-->
+										<!--<td>-->
+											<!--02/04/2012-->
+										<!--</td>-->
+										<!--<td>-->
+											<!--Declined-->
+										<!--</td>-->
+									<!--</tr>-->
+									<!--<tr class="warning">-->
+										<!--<td>-->
+											<!--3-->
+										<!--</td>-->
+										<!--<td>-->
+											<!--TB - Monthly-->
+										<!--</td>-->
+										<!--<td>-->
+											<!--03/04/2012-->
+										<!--</td>-->
+										<!--<td>-->
+											<!--Pending-->
+										<!--</td>-->
+									<!--</tr>-->
+									<!--<tr class="danger">-->
+										<!--<td>-->
+											<!--4-->
+										<!--</td>-->
+										<!--<td>-->
+											<!--TB - Monthly-->
+										<!--</td>-->
+										<!--<td>-->
+											<!--04/04/2012-->
+										<!--</td>-->
+										<!--<td>-->
+											<!--Call in to confirm-->
+										<!--</td>-->
+									<!--</tr>-->
+									<!--</tbody>-->
+								<!--</table>-->
+							<!--</div>-->
+						<!--</div>-->
+						<!--<div class="row">-->
+							<!--<div class="col-md-12">-->
+							<!--</div>-->
+						<!--</div>-->
+					<!--</div>-->
+				<!--</div>-->
+			</div>
+		</div>
+	</div>
+</section>
+
+<script src="../vendor/jquery/dist/jquery.js"></script>
+<script src="../vendor/pace/pace.min.js"></script>
+<script src="../app/components/navigator/nav.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,57 @@
+@import "../../config/config";
+
+$topOperationHeight: 50 * $onePx;
+$topOperationPaddingTop: 30 * $onePx;
+$topOperationMarginBottom: 12 * $onePx;
+
+.#{$prefix}-top-operation{
+	height: $topOperationHeight;
+	line-height: $topOperationHeight;
+	padding-top: $topOperationPaddingTop;
+	margin-bottom: $topOperationMarginBottom;
+	%right-top {
+		height: 20 * $onePx;
+		line-height: 20 * $onePx;
+	}
+
+	.title {
+		@extend %right-top;
+		padding-bottom: 15 * $onePx;
+		float: left;
+		font-size: 12px;
+		font-weight: bold;
+	}
+
+	.operations {
+		@extend %right-top;
+		padding-right: 20 * $onePx;
+		float: right;
+		display: block;
+		width: 300 * $onePx;
+		text-align: right;
+
+		.#{$prefix}-icon {
+			&.active, &:hover {
+				color: #1fb1ea;
+			}
+
+			cursor: pointer;
+		}
+
+		.#{$prefix}-input-search {
+			display: inline-block;
+			position: relative;
+		}
+
+		.#{$prefix}-icon-search {
+			position: absolute;
+			right: 9px;
+			top: 9px;
+		}
+
+		.#{$prefix}-icon {
+			margin-left: 20 * $onePx;
+		}
+
+	}
+}

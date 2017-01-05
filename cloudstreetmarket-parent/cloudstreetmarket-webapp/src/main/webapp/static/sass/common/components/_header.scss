@@ -1,0 +1,50 @@
+@import "../../config/config";
+
+.#{$prefix}-header {
+	height: $headerHeight;
+	background-color: $headerBackgroundColor;
+	color: #fff;
+	.logo {
+		height: $headerHeight;
+		line-height: $headerHeight;
+		padding: 0 10 * $onePx;
+		display: inline-block;
+		float: left;
+		a {
+			color: #fff;
+			font-size: 22 * $onePx;
+		}
+	}
+	.#{$prefix}-top-menu {
+		height: $headerHeight;
+		text-align: right;
+		display: inline-block;
+		float: right;
+		.top-menu-item {
+			height: $headerHeight;
+			display: block;
+			text-align: center;
+			float: left;
+			a {
+				height: $headerHeight;
+				display: block;
+				padding: 15 * $onePx 15 * $onePx;
+				color: #fff;
+
+				&:hover {
+					background-color: #52637F;
+				}
+			}
+		}
+
+		.notification {
+
+		}
+		.user {
+
+		}
+		.setting {
+
+		}
+	}
+}

@@ -1,0 +1,52 @@
+@import "../../config/_config";
+@import "../../layouts/_footer-layout";
+
+.#{$prefix}-footer {
+	clear: both;
+	background-color: $headerBackgroundColor;
+	.#{$prefix}-footer-container {
+		font-size: 12 * $onePx;
+		color: #fff;
+		padding: 20 * $onePx 100 * $onePx;
+		.#{$prefix}-footer-item {
+			text-align: center;
+			padding: 0 10 * $onePx;
+			.icon {
+				padding: 20 * $onePx 0;
+				color: #93989f;
+				.neu-icon {
+					font-size: 40 * $onePx;
+				}
+			}
+
+			.title {
+				padding: 20 * $onePx 0;
+			}
+			.description {
+			}
+		}
+
+		.#{$prefix}-bottom {
+			clear: both;
+			overflow: hidden;
+			padding-top: 30 * $onePx;
+			.#{$prefix}-copyright {
+				height: 80 * $onePx;
+				line-height: 80 * $onePx;
+				font-weight: 600;
+				text-align: center;
+			}
+			.#{$prefix}-social {
+				height: 80 * $onePx;
+				line-height: 80 * $onePx;
+				text-align: right;
+				.social-item {
+					display: block;
+					float: left;
+					font-size: 40 * $onePx;
+					padding: 0 15 * $onePx;
+				}
+			}
+		}
+	}
+}

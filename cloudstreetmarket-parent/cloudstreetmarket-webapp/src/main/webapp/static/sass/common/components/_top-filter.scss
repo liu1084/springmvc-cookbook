@@ -1,0 +1,18 @@
+@import "../../config/config";
+
+$topOperationHeight: 50 * $onePx;
+$topOperationPaddingTop: 30 * $onePx;
+$topOperationMarginBottom: 12 * $onePx;
+
+.#{$prefix}-top-filter{
+	height: $topOperationHeight;
+	line-height: $topOperationHeight;
+	font-size: 12px;
+
+	.filters {
+		.filter {
+
+		}
+
+	}
+}
