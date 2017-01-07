@@ -1,20 +1,21 @@
 package com.jim.controller;
 
-import org.apache.commons.io.IOUtils;
-import org.springframework.http.MediaType;
+import org.apache.commons.lang3.StringEscapeUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 import java.io.*;
 import java.net.URL;
-
-import static com.sun.xml.internal.ws.spi.db.BindingContextFactory.LOGGER;
+import java.net.URLConnection;
+import java.util.Calendar;
+import java.util.Objects;
 
 /**
  * Created by jim on 2017/1/7.
@@ -24,40 +25,49 @@ import static com.sun.xml.internal.ws.spi.db.BindingContextFactory.LOGGER;
 @RequestMapping(value = "/page")
 public class PageController extends BaseController {
 	private static final int BUFFER_SIZE = 4096;
+	private String fileName = String.valueOf(Calendar.getInstance().getTimeInMillis()) + ".html";
 
 	@RequestMapping(value = {"", "/"}, method = RequestMethod.GET)
 	public String index() {
 		return "save-page";
 	}
 
-	@RequestMapping(value = "/save", method = RequestMethod.GET)
-	@ResponseBody
-	public String save() {
-		ExecuteShellComand obj = new ExecuteShellComand();
-		String domainName = "http://localhost:8080/webapp/";
-		String command = "wget -m -k --page-requisites -H --tries=10 -b -o wget.log --continue --remote-encoding=utf-8 " + domainName;
-		String output = obj.executeCommand(command);
-		System.out.println(output);
-		return "saved!";
-	}
-
 	@RequestMapping(value = "/saveHtml", method = RequestMethod.GET)
-	public void getLogFile(HttpServletRequest request, HttpServletResponse response) throws Exception {
+	public void save(HttpServletRequest request, HttpServletResponse response, @RequestParam(value = "u", required = false, defaultValue = "") String u) throws Exception {
+		if (Objects.equals(u, "") || u.equals(null) || StringUtils.isEmpty(u) || u.equals("undefined")){
+			throw new Exception("url is null");
+		}
 		ServletContext context = request.getServletContext();
-		String appPath = context.getRealPath("");
-		System.out.println("appPath = " + appPath);
-		String filePath = "http://localhost:8080/webapp/page/";
-		File downloadFile = new File(new URL(filePath).getContent().toString());
-		//FileInputStream inputStream = new FileInputStream(downloadFile);
-		InputStream inputStream = new URL(filePath).openStream();
-		// get output stream of the response
-		OutputStream outStream = response.getOutputStream();
-		String mimeType = context.getMimeType(filePath);
+
 		try {
+			URL url = new URL(u);
+			URLConnection urlConnection = url.openConnection();
+			BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(urlConnection.getInputStream()));
+
+			String inputLine;
+
+			File downloadFile = new File(fileName);
+
+			if (!downloadFile.exists()){
+				downloadFile.createNewFile();
+			}
+
+			FileWriter fileWriter = new FileWriter(downloadFile.getAbsoluteFile());
+			BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
+
+			while((inputLine = bufferedReader.readLine()) != null){
+				bufferedWriter.write(inputLine);
+			}
+
+			FileInputStream inputStream = new FileInputStream(downloadFile);
+			// get output stream of the response
+			OutputStream outStream = response.getOutputStream();
+			String mimeType = context.getMimeType(downloadFile.getAbsolutePath());
+
+
 			if (mimeType == null) {
 				mimeType = "application/octet-stream";
 			}
-			System.out.println("MIME type: " + mimeType);
 
 			response.setContentType(mimeType);
 			response.setContentLength((int) downloadFile.length());
@@ -66,6 +76,7 @@ public class PageController extends BaseController {
 			String headerValue = String.format("attachment; filename=\"%s\"",
 					downloadFile.getName());
 			response.setHeader(headerKey, headerValue);
+			response.setContentType("text/html;charset=UTF-8");
 
 
 			byte[] buffer = new byte[BUFFER_SIZE];
@@ -75,13 +86,16 @@ public class PageController extends BaseController {
 				outStream.write(buffer, 0, bytesRead);
 			}
 
+			bufferedReader.close();
+			bufferedWriter.close();
+			inputStream.close();
+			outStream.close();
+			fileWriter.close();
+
 
 		} catch (Exception e) {
 			logger.debug("Request could not be completed at this moment. Please try again.");
 			e.printStackTrace();
-		} finally {
-			inputStream.close();
-			outStream.close();
 		}
 
 	}

@@ -8,17 +8,16 @@
 </head>
 <body>
 test
-<button id="save">save page</button>
-<a href="<%=appPath%>/page/saveHtml">download</a>
+<a id="save2">save</a>
 <script src="<%=appPath%>/static/vendor/jquery/dist/jquery.min.js"></script>
 <script>
     var appPath = '<%=appPath%>';
     $(function () {
-        $('#save').on('click', function () {
-            $.get(appPath + '/page/saveHtml', function () {
-                console.log('saved!');
-			})
-		})
+        //必须是完整的URL地址
+        //downloadUrl = 'http://www.ifeng.com';
+        var downloadUrl = window.location.href;
+        var path = appPath + '/page/saveHtml?u=' + downloadUrl;
+        $('#save2').attr('href', path);
 	})
 </script>
 </body>
