@@ -7,7 +7,7 @@ import javax.persistence.*;
  * This class is ...
  */
 @Entity
-@Table(name = "books", schema = "ebook", catalog = "")
+@Table(name = "books", schema = "ebook")
 public class BooksEntity {
 	private long id;
 	private String name;

@@ -8,7 +8,7 @@ import java.sql.Timestamp;
  * This class is ...
  */
 @Entity
-@Table(name = "comments", schema = "ebook", catalog = "")
+@Table(name = "comments", schema = "ebook")
 public class CommentsEntity {
 	private long id;
 	private long parentId;

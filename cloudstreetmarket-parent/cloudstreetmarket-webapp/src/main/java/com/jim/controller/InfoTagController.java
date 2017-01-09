@@ -19,57 +19,57 @@ import java.util.StringJoiner;
  * This class is ...
  */
 @Controller
-@RequestMapping("/")
+@RequestMapping("/info")
 public class InfoTagController {
 	@Autowired
 	private WebApplicationContext webAppContext;
-//
-//	private static final LocalDateTime localDateTime = LocalDateTime.now();
-//	private static final DateTimeFormatter dateTimeFormat = DateTimeFormatter.ofPattern("EEE, d MMM yyyy HH:mm:ss a");
-//
+
+	private static final LocalDateTime localDateTime = LocalDateTime.now();
+	private static final DateTimeFormatter dateTimeFormat = DateTimeFormatter.ISO_LOCAL_DATE_TIME;
+
 	@RequestMapping(value = {"", "/"}, method = RequestMethod.GET)
 	@ResponseBody
 	public String test(){
 		return "test";
 	}
-//
-//	@RequestMapping(value = "/helloHandler", method = RequestMethod.GET)
-//	public String helloHandler(ModelMap modelAndView) {
-//		modelAndView.addAttribute("message", "hello");
-//		return "index";
-//	}
-//
-//	@RequestMapping(value = "/message/{name:.+}", method = RequestMethod.GET)
-//	public ModelAndView messageHandler(@PathVariable String name) {
-//		ModelAndView model = new ModelAndView();
-//		model.setViewName("index");
-//		return model;
-//	}
-//
-//	@RequestMapping(value = "/hello/{name:.?}", method = RequestMethod.GET)
-//	public ModelAndView hello(@PathVariable("name") String name) {
-//
-//		ModelAndView model = new ModelAndView();
-//		model.setViewName("index");
-//		model.addObject("message", name);
-//
-//		return model;
-//
-//	}
-//
-//	@RequestMapping("/server")
-//	@ResponseBody
-//	public String infoTagServer() {
-//		return new StringJoiner("<br/>")
-//				.add("html:5	")
-//				.add("---------------------")
-//				.add("Server:")
-//				.add(webAppContext.getServletContext().getServerInfo())
-//				.add("bean:")
-//				.add((CharSequence) webAppContext.getBean("webAppVersion"))
-//				.add("Start date:")
-//				.add(localDateTime.format(dateTimeFormat))
-//				.add("---------------------")
-//				.toString();
-//	}
+
+	@RequestMapping(value = "/helloHandler", method = RequestMethod.GET)
+	public String helloHandler(ModelMap modelAndView) {
+		modelAndView.addAttribute("message", "hello");
+		return "index";
+	}
+
+	@RequestMapping(value = "/message/{name:.+}", method = RequestMethod.GET)
+	public ModelAndView messageHandler(@PathVariable String name) {
+		ModelAndView model = new ModelAndView();
+		model.setViewName("index");
+		return model;
+	}
+
+	@RequestMapping(value = "/hello/{name:.?}", method = RequestMethod.GET)
+	public ModelAndView hello(@PathVariable("name") String name) {
+
+		ModelAndView model = new ModelAndView();
+		model.setViewName("index");
+		model.addObject("message", name);
+
+		return model;
+
+	}
+
+	@RequestMapping(value = "/server", produces = "text/html;charset=UTF-8")
+	@ResponseBody
+	public String infoTagServer() {
+		return new StringJoiner("<br/>")
+				.add("html:5	")
+				.add("---------------------")
+				.add("Server:")
+				.add(webAppContext.getServletContext().getServerInfo())
+				.add("bean:")
+				.add((CharSequence) webAppContext.getBean("webAppVersion"))
+				.add("Start date:")
+				.add(localDateTime.format(dateTimeFormat))
+				.add("---------------------")
+				.toString();
+	}
 }
