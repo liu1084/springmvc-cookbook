@@ -13,10 +13,10 @@
             <!--<id>central</id>-->
             <!--<url>http://10.4.45.12:8081/nexus/content/groups/public/</url>-->
         <!--</repository>-->
-        <!--<repository>-->
-            <!--<id>central</id>-->
-            <!--<url>http://central.maven.org/maven2/</url>-->
-        <!--</repository>-->
+        <repository>
+            <id>central</id>
+            <url>http://central.maven.org/maven2/</url>
+        </repository>
         <!--<repository>-->
             <!--<id>mirrors</id>-->
             <!--<url>http://45.79.180.85:8081/nexus/content/groups/public/</url>-->
@@ -167,6 +167,11 @@
             </dependency>
 
             <!-- Web dependencies -->
+            <dependency>
+                <groupId>javax.servlet</groupId>
+                <artifactId>javax.servlet-api</artifactId>
+                <version>${servlet-api.version}</version>
+            </dependency>
             <dependency>
                 <groupId>javax.servlet.jsp</groupId>
                 <artifactId>jsp-api</artifactId>

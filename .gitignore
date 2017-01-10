@@ -2,7 +2,6 @@ target
 .metadata
 RemoteSystemsTempFiles
 .idea
-*.iml
 .settings
 .project
 Servers
