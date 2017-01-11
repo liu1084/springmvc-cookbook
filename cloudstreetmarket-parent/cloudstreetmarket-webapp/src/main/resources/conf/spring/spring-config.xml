@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean class="java.lang.String" id="webAppVersion">
+        <constructor-arg value="1.0"/>
+    </bean>
+
+    <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="prefix" value="/WEB-INF/jsp/"/>
+        <property name="suffix" value=".jsp"/>
+        <property name="viewClass" value="org.springframework.web.servlet.view.JstlView"/>
+    </bean>
+
+    <bean id="httpClientFactory" class="org.springframework.http.client.SimpleClientHttpRequestFactory">
+        <property name="connectTimeout" value="3000"/>
+        <property name="readTimeout" value="30000"/>
+    </bean>
+
+    <bean id="restTemplate" class="org.springframework.web.client.RestTemplate">
+        <constructor-arg ref="httpClientFactory"/>
+    </bean>
+
+    <bean id="filterMultipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        <property name="defaultEncoding" value="${webapp.encoding}"/>
+        <property name="maxUploadSize" value="10240000"/>
+        <property name="maxInMemorySize" value="4096"/>
+    </bean>
+
+    <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer"
+          id="propertyPlaceholderConfigurer">
+        <property name="location" value="classpath:webapp.properties"/>
+        <property name="systemPropertiesMode" value="2"/>
+    </bean>
+
+    <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="driverClassName" value="${webapp.datasource.driverClass}"/>
+        <property name="url" value="${webapp.datasource.jdbcUrl}"/>
+        <property name="username" value="${webapp.datasource.user}"/>
+        <property name="password" value="${webapp.datasource.password}"/>
+    </bean>
+
+    <bean id="transactionManager" class="org.springframework.orm.hibernate5.HibernateTransactionManager">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+
+    <bean id="sessionFactory" class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
+        <property name="dataSource" ref="dataSource"/>
+        <property name="packagesToScan">
+            <list>
+                <value>com.jim.portal.entity</value>
+            </list>
+        </property>
+        <property name="mappingDirectoryLocations">
+            <list>
+                <value>/WEB-INF/conf/**/hbm</value>
+            </list>
+        </property>
+        <property name="configLocation" value="/WEB-INF/conf/hibernate/hibernate.cfg.xml"/>
+    </bean>
+
+</beans>
