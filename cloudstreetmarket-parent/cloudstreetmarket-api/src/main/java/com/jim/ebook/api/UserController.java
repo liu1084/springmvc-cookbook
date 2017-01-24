@@ -1,4 +1,4 @@
-package edu.zipcloud.cloudstreetmarket.api.controllers;
+package com.jim.ebook.api;
 
 import com.google.gson.Gson;
 import org.springframework.stereotype.Controller;

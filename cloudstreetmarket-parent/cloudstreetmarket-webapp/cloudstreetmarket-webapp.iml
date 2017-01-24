@@ -21,9 +21,15 @@
     </facet>
     <facet type="Spring" name="Spring">
       <configuration>
+        <fileset id="web application context" name="MVC application context" removed="true">
+          <file>file://$MODULE_DIR$/src/main/resources/conf/spring/webapp-spring-config.xml</file>
+        </fileset>
+        <fileset id="web app servlet context" name="MVC app servlet context" removed="true">
+          <file>file://$MODULE_DIR$/src/main/resources/conf/spring/webapp-dispatcher-context.xml</file>
+        </fileset>
         <fileset id="fileset" name="Spring Application Context" removed="false">
-          <file>file://$MODULE_DIR$/src/main/webapp/WEB-INF/conf/springmvc/dispatcher-context.xml</file>
-          <file>file://$MODULE_DIR$/src/main/webapp/WEB-INF/conf/springmvc/spring-beans.xml</file>
+          <file>file://$MODULE_DIR$/src/main/resources/conf/spring/webapp-dispatcher-context.xml</file>
+          <file>file://$MODULE_DIR$/src/main/resources/conf/spring/webapp-spring-config.xml</file>
         </fileset>
       </configuration>
     </facet>

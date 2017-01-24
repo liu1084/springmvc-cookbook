@@ -55,10 +55,10 @@
         </property>
         <property name="mappingDirectoryLocations">
             <list>
-                <value>/WEB-INF/conf/**/hbm</value>
+                <value>classpath:conf/**/hbm</value>
             </list>
         </property>
-        <property name="configLocation" value="/WEB-INF/conf/hibernate/hibernate.cfg.xml"/>
+        <property name="configLocation" value="classpath:conf/hibernate/hibernate.cfg.xml"/>
     </bean>
 
 </beans>
